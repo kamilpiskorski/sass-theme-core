@@ -1,0 +1,27 @@
+/// Form info
+$form-hint-font-family: false !default;
+$form-hint-font-weight: $font-weight-normal !default;
+$form-hint-font-size: 0.875rem !default;
+$form-hint-line-height: 1.5rem !default;
+
+$form-hint-color: $grey-700 !default;
+$form-hint-color-error: $danger !default;
+
+$form-hint-offset-top: 0.25rem !default;
+
+.form-hint {
+    display: block;
+    margin-top: $form-hint-offset-top;
+    text-align: right;
+    @if $form-hint-font-family {
+        font-family: $form-hint-font-family;
+    }
+    font-weight: $form-hint-font-weight;
+    font-size: $form-hint-font-size;
+    line-height: $form-hint-line-height;
+    color: $form-hint-color;
+
+    &.error {
+        color: $form-hint-color-error;
+    }
+}

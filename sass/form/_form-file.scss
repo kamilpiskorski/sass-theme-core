@@ -1,0 +1,43 @@
+/// Form file label
+$form-file-label-font-family: false !default;
+$form-file-label-font-weight: $font-weight-normal !default;
+$form-file-label-font-size: 0.875rem !default;
+$form-file-label-line-height: 1.5rem !default;
+
+$form-file-label-color: $grey-700 !default;
+
+$form-file-label-offset-left: 1rem !default;
+
+.form-file {
+    display: flex;
+    align-items: baseline;
+}
+
+.form-file-browse {
+    position: relative;
+    white-space: nowrap;
+}
+
+.form-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-file-label {
+    display: block;
+    flex: 1 0 0;
+    max-width: 100%;
+    margin-left: $form-file-label-offset-left;
+    @if $form-file-label-font-family {
+        font-family: $form-file-label-font-family;
+    }
+    font-weight: $form-file-label-font-weight;
+    font-size: $form-file-label-font-size;
+    line-height: $form-file-label-line-height;
+    color: $form-file-label-color;
+}

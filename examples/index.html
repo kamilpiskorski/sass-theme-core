@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>MVPdoers - sass theme core</title>
+
+        <meta name="description" content="SASS theme core. Set of utilities, vars, grid, form elements and some pure components.">
+
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
+
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+        <meta name="theme-color" content="#FFFFFF">
+
+        <link rel="stylesheet" href="css/app.css">
+
+        <script src="https://kit.fontawesome.com/73b08baea9.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="notification">
+                        <button class="notification-close"><i class="fas fa-times"></i></button>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti deserunt distinctio impedit, labore natus nemo officiis placeat rerum sint. Accusamus asperiores aut beatae commodi labore natus optio, quaerat quia velit!
+                    </div>
+
+                    <div class="notification notification-primary">
+                        <button class="notification-close"><i class="fas fa-times"></i></button>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti deserunt distinctio impedit, labore natus nemo officiis placeat rerum sint. Accusamus asperiores aut beatae commodi labore natus optio, quaerat quia velit!
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="notification notification-success">
+                        <button class="notification-close"><i class="fas fa-times"></i></button>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti deserunt distinctio impedit, labore natus nemo officiis placeat rerum sint. Accusamus asperiores aut beatae commodi labore natus optio, quaerat quia velit!
+                    </div>
+
+                    <div class="notification notification-danger">
+                        <button class="notification-close"><i class="fas fa-times"></i></button>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti deserunt distinctio impedit, labore natus nemo officiis placeat rerum sint. Accusamus asperiores aut beatae commodi labore natus optio, quaerat quia velit!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="badge badge-small badge-primary">
+                        <span>Wybrany filtr</span>
+                        <button class="icon"><i class="fas fa-times"></i></button>
+                    </div>
+
+                    <div class="badge">
+                        <span>Wybrany filtr</span>
+                        <button class="icon"><i class="fas fa-times"></i></button>
+                    </div>
+
+                    <div class="badge badge-large badge-success">
+                        <span>Wybrany filtr</span>
+                        <button class="icon"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <button class="button button-solid-light">Button</button>
+                    <button class="button button-solid-dark">Button</button>
+                    <button class="button button-solid-primary">Button</button>
+                    <button class="button button-solid-secondary">Button</button>
+                    <button class="button button-solid-success">Button</button>
+                    <button class="button button-solid-danger">Button</button>
+                </div>
+                <div class="column">
+                    <button class="button button-outline-light">Button</button>
+                    <button class="button button-outline-dark">Button</button>
+                    <button class="button button-outline-primary">Button</button>
+                    <button class="button button-outline-secondary">Button</button>
+                    <button class="button button-outline-success">Button</button>
+                    <button class="button button-outline-danger">Button</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="form-group error">
+                        <div class="form-check">
+                            <input class="form-check-input" id="checkbox-city" type="checkbox">
+                            <div class="form-check-mark"><i class="fas fa-check"></i></div>
+                            <label class="form-check-label" for="checkbox-city">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ex fugiat id iure laboriosam maxime molestiae porro quidem quod vero. Optio perspiciatis reiciendis unde voluptate. Amet exercitationem laudantium similique veniam?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group form-group-check">
+                        <div class="form-check">
+                            <input class="form-check-input" id="radio-city-poznan" name="city" type="radio">
+                            <div class="form-check-mark"></div>
+                            <label class="form-check-label" for="radio-city-poznan">Poznań</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="radio-city-gdansk" name="city" type="radio">
+                            <div class="form-check-mark"></div>
+                            <label class="form-check-label" for="radio-city-gdansk">Gdańsk</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="form-group">
+                        <div class="form-label floating">Szukaj w Miasto</div>
+                        <div class="form-control">
+                            <select class="form-control-input" aria-label="Szukaj w Miasto">
+                                <option value="" selected disabled>Szukaj w Miasto</option>
+                                <option>Warszawa</option>
+                                <option>Poznań</option>
+                                <option>Wrocław</option>
+                                <option>Kraków</option>
+                            </select>
+                            <div class="form-control-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="search">Szukaj w Miasto</label>
+                        <div class="form-control">
+                            <input class="form-control-input" id="search" placeholder="Szukaj w Miasto" type="date">
+                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-group error">
+                        <div class="form-label floating">Szukaj w Miasto</div>
+                        <div class="form-control">
+                            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search">
+                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+                        </div>
+                        <div class="form-hint error">Pole miasto jest wymagane</div>
+                    </div>
+
+                    <div class="form-group disabled">
+                        <div class="form-label">Szukaj w Miasto</div>
+                        <div class="form-control">
+                            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search" value="Cokolwiek" disabled>
+                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+                        </div>
+                        <div class="form-hint">Pozostało 120 znaków</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="form-file">
+                        <div class="form-file-browse button button-outline-dark">
+                            <span>Wybierz plik</span>
+                            <input class="form-file-input" id="file" type="file">
+                        </div>
+                        <label class="form-file-label" for="file">Możesz dodać plik .doc, .pdf, .rtf, .jpg, .png, .bmp o maksymalnej wadze 3MB.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="text-heading-1">Heading 1</h1>
+                    <h2 class="text-heading-2">Heading 2</h2>
+                    <h3 class="text-heading-3">Heading 3</h3>
+                    <h4 class="text-heading-4">Heading 4</h4>
+                    <h5 class="text-heading-5">Heading 5</h5>
+                    <h6 class="text-heading-6">Heading 6</h6>
+                </div>
+                <div class="column">
+                    <p>Text normal</p>
+                    <p class="text-small">Text small</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const formControlInputs = document.querySelectorAll('.form-control-input');
+
+            const checkFormControlFilled = () => {
+                formControlInputs.forEach(formControlInput => {
+                    const formGroup = formControlInput.closest('.form-group');
+                    formGroup.classList.toggle('filled', !!formControlInput.value);
+                });
+            };
+
+            formControlInputs.forEach(formControlInput => {
+                const formGroup = formControlInput.closest('.form-group');
+
+                formControlInput.addEventListener('focus', () => {
+                    formGroup.classList.add('focus');
+                });
+
+                formControlInput.addEventListener('blur', () => {
+                    formGroup.classList.remove('focus');
+                });
+
+                formControlInput.addEventListener('input', () => {
+                    checkFormControlFilled();
+                });
+            });
+
+            checkFormControlFilled();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+/// FUNCTIONS
+@function container-width($size) {
+    @return map-get($grid, $size);
+}
+
+@function container-padding($size) {
+    @return calc(50% - #{container-width($size) / 2});
+}
+
+@function column-width($number, $size: null) {
+    @if $size {
+        @return ($number / 12) * container-width($size);
+    } @else {
+        @return percentage($number / 12);
+    }
+}
+
+/// MIXINS
+@mixin retina() {
+    @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin rwd($size) {
+    @media (min-width: container-width($size)) {
+        @content;
+    }
+}
+
+@mixin container() {
+    @each $size, $width in $grid {
+        @include rwd($size) {
+            padding-left: container-padding($size);
+            padding-right: container-padding($size);
+        }
+    }
+}
+
+@mixin column($number, $size: null) {
+    flex: 0 0 column-width($number, $size);
+    max-width: column-width($number, $size);
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @each $size, $width in $grid {
+        @include rwd($size) {
+            width: $width;
+        }
+    }
+
+    &.fluid {
+        width: auto;
+        margin-left: $grid-gap;
+        margin-right: $grid-gap;
+    }
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%column {
+    position: relative;
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+}
+
+.column {
+    @extend %column;
+
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+@each $size, $width in $grid {
+    .column-#{$size} {
+        @extend %column;
+    }
+
+    @include rwd($size) {
+        .column-#{$size} {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    .column-#{$i} {
+        @extend %column;
+        @include column($i);
+    }
+}
+
+@each $size, $width in $grid {
+    @for $i from 1 through 12 {
+        .column-#{$size}-#{$i} {
+            @extend %column;
+        }
+    }
+
+    @include rwd($size) {
+        @for $i from 1 through 12 {
+            .column-#{$size}-#{$i} {
+                @include column($i);
+            }
+        }
+    }
+}

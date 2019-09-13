@@ -1,0 +1,59 @@
+/// Notification
+$notification-font-family: false !default;
+$notification-font-weight: $font-weight-normal !default;
+$notification-font-size: 1rem !default;
+$notification-line-height: 1.5rem !default;
+
+$notification-color: $grey-900 !default;
+$notification-solid-color: $white !default;
+
+$notification-background-color: $grey-200 !default;
+
+$notification-border-radius: $border-radius !default;
+
+$notification-padding-y: 1rem !default;
+$notification-padding-x: 1.5rem !default;
+
+$notification-button-padding-y: 0.5rem !default;
+$notification-button-padding-x: 0.75rem !default;
+
+$notification-custom-colors: (
+    notification-light: $grey-900
+) !default;
+
+.notification {
+    display: block;
+    position: relative;
+    padding: $notification-padding-y $notification-padding-x;
+    @if $notification-font-family {
+        font-family: $notification-font-family;
+    }
+    font-weight: $notification-font-weight;
+    font-size: $notification-font-size;
+    line-height: $notification-line-height;
+    color: $notification-color;
+    background-color: $notification-background-color;
+    border-radius: $notification-border-radius;
+}
+
+.notification-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $notification-button-padding-y $notification-button-padding-x;
+    line-height: 1;
+}
+
+@each $name, $color in $colors {
+    .notification-#{$name} {
+        @if map-get($notification-custom-colors, notification-#{$name}) {
+            color: map-get($notification-custom-colors, notification-#{$name});
+        } @else {
+            color: $notification-solid-color;
+        }
+        background-color: map-get($color, $name);
+    }
+}

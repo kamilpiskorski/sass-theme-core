@@ -1,0 +1,112 @@
+/// Form control
+/// @todo add error message and hint
+$form-control-font-family: false !default;
+$form-control-font-weight: $font-weight-normal !default;
+$form-control-font-size: 1rem !default;
+$form-control-line-height: 1.5rem !default;
+
+$form-control-color: $grey-900 !default;
+$form-control-color-placeholder: $grey !default;
+$form-control-color-disabled: $grey !default;
+
+$form-control-background-color: $white !default;
+
+$form-control-border-width: 1px !default;
+$form-control-border-style: solid !default;
+$form-control-border-color: $grey-400 !default;
+
+$form-control-border-width-focus: 2px !default;
+$form-control-border-color-focus: $secondary !default;
+
+$form-control-border-color-success: $success !default;
+$form-control-border-color-error: $danger !default;
+
+$form-control-border-color-disabled: $form-control-border-color !default;
+$form-control-border-style-disabled: dashed !default;
+
+$form-control-border-radius: $border-radius !default;
+
+$form-control-padding-y: 0.75rem !default;
+$form-control-padding-x: 0.75rem !default;
+
+/// Form control icon
+$form-control-icon-color: $form-control-color !default;
+$form-control-icon-color-disabled: $form-control-color-disabled !default;
+
+$form-control-icon-offset-top: 1rem !default;
+$form-control-icon-offset-right: 1rem !default;
+
+.form-control {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: $form-control-border-width $form-control-border-style $form-control-border-color;
+        border-radius: $form-control-border-radius;
+        transition-property: border-width, border-color;
+        transition-duration: $transition-duration;
+        pointer-events: none;
+    }
+}
+
+.form-group.focus .form-control::after {
+    border-width: $form-control-border-width-focus;
+    border-color: $form-control-border-color-focus;
+}
+
+.form-group.success .form-control::after {
+    border-color: $form-control-border-color-success;
+}
+
+.form-group.error .form-control::after {
+    border-color: $form-control-border-color-error;
+}
+
+.form-group.disabled .form-control::after {
+    border-style: $form-control-border-style-disabled;
+    border-color: $form-control-border-color-disabled;
+}
+
+.form-control-input {
+    display: block;
+    width: 100%;
+    padding: $form-control-padding-y $form-control-padding-x;
+    @if $form-control-font-family {
+        font-family: $form-control-font-family;
+    }
+    font-weight: $form-control-font-weight;
+    font-size: $form-control-font-size;
+    line-height: $form-control-line-height;
+    color: $form-control-color;
+    background-color: $form-control-background-color;
+    border-radius: $form-control-border-radius;
+
+    &::placeholder {
+        color: $form-control-color-placeholder;
+    }
+}
+
+.form-group.disabled .form-control-input {
+    -webkit-text-fill-color: $form-control-color-disabled;
+    color: $form-control-color-disabled;
+    pointer-events: none;
+}
+
+.form-control-icon {
+    position: absolute;
+    top: $form-control-icon-offset-top;
+    right: $form-control-icon-offset-right;
+    line-height: 1;
+    color: $form-control-icon-color;
+    pointer-events: none;
+}
+
+.form-group.disabled .form-control-icon {
+    color: $form-control-icon-color-disabled;
+}

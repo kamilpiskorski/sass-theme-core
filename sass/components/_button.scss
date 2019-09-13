@@ -1,0 +1,182 @@
+/// Button
+/// @todo add dynamic font-size and padding (not rem)
+/// @todo add disabled status
+$button-font-family: false !default;
+$button-font-weight: $font-weight-medium !default;
+$button-font-size: 1rem !default;
+$button-line-height: 1.5rem !default;
+
+$button-color: $text-color !default;
+$button-color-hover: $white !default;
+
+$button-background-color: $white !default;
+$button-background-color-hover: $grey-400 !default;
+$button-background-color-active: $grey-500 !default;
+
+$button-border-width: 2px !default;
+$button-border-color: $grey-400 !default;
+$button-border-radius: $border-radius !default;
+
+$button-padding-y: 0.75rem !default;
+$button-padding-x: 1.5rem !default;
+$button-padding-y-small: 0.5rem !default;
+$button-padding-x-small: 1rem !default;
+$button-padding-y-large: 1rem !default;
+$button-padding-x-large: 2rem !default;
+
+$button-icon-offset: 0.75rem !default;
+$button-icon-offset-small: 0.5rem !default;
+$button-icon-offset-large: 1rem !default;
+
+$button-solid-color: $white !default;
+$button-solid-color-hover: $button-solid-color !default;
+
+$button-outline-color-hover: $white !default;
+$button-outline-background-color: transparent !default;
+
+$button-shadow-active: 0 0 0.125rem 0.125rem rgba($grey, 0.32) !default;
+
+$button-custom-colors: (
+    button-solid-light: $grey-900,
+    button-solid-light-hover: $grey-900,
+    button-outline-light: $grey-900,
+    button-outline-light-hover: $grey-900
+) !default;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(#{$button-padding-y} - #{$button-border-width}) calc(#{$button-padding-x} - #{$button-border-width});
+    text-align: center;
+    @if $button-font-family {
+        font-family: $button-font-family;
+    }
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    color: $button-color;
+    background-color: $button-background-color;
+    border: $button-border-width solid $button-border-color;
+    border-radius: $button-border-radius;
+    cursor: pointer;
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: $transition-duration;
+
+    &:hover {
+        text-decoration: none;
+        color: $button-color-hover;
+        background-color: $button-background-color-hover;
+        border-color: $button-background-color-hover;
+    }
+
+    &:active {
+        background-color: $button-background-color-active;
+        border-color: $button-background-color-active;
+    }
+
+    &:focus:not(:active) {
+        box-shadow: $button-shadow-active;
+    }
+
+    .icon:first-child {
+        margin-right: $button-icon-offset;
+    }
+
+    .icon:last-child {
+        margin-left: $button-icon-offset;
+    }
+}
+
+.button-small {
+    padding: calc(#{$button-padding-y-small} - #{$button-border-width}) calc(#{$button-padding-x-small} - #{$button-border-width});
+
+    .icon:first-child {
+        margin-right: $button-icon-offset-small;
+    }
+
+    .icon:last-child {
+        margin-left: $button-icon-offset-small;
+    }
+}
+
+.button-large {
+    padding: calc(#{$button-padding-y-large} - #{$button-border-width}) calc(#{$button-padding-x-large} - #{$button-border-width});
+
+    .icon:first-child {
+        margin-right: $button-icon-offset-large;
+    }
+
+    .icon:last-child {
+        margin-left: $button-icon-offset-large;
+    }
+}
+
+.button-full {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+@each $name, $color in $colors {
+    .button-solid-#{$name} {
+        @if map-get($button-custom-colors, button-solid-#{$name}) {
+            color: map-get($button-custom-colors, button-solid-#{$name});
+        } @else {
+            color: $button-solid-color;
+        }
+        background-color: map-get($color, $name);
+        border-color: map-get($color, $name);
+
+        &:hover {
+            @if map-get($button-custom-colors, button-solid-#{$name}-hover) {
+                color: map-get($button-custom-colors, button-solid-#{$name}-hover);
+            } @else {
+                color: $button-solid-color-hover;
+            }
+            background-color: map-get($color, shade);
+            border-color: map-get($color, shade);
+        }
+
+        &:active {
+            background-color: map-get($color, tint);
+            border-color: map-get($color, tint);
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    .button-outline-#{$name} {
+        @if map-get($button-custom-colors, button-outline-#{$name}) {
+            color: map-get($button-custom-colors, button-outline-#{$name});
+        } @else {
+            color: map-get($color, $name);
+        }
+        background-color: $button-outline-background-color;
+        border-color: map-get($color, $name);
+
+        &:hover {
+            @if map-get($button-custom-colors, button-outline-#{$name}-hover) {
+                color: map-get($button-custom-colors, button-outline-#{$name}-hover);
+            } @else {
+                color: $button-outline-color-hover;
+            }
+            background-color: map-get($color, shade);
+            border-color: map-get($color, shade);
+        }
+
+        &:active {
+            background-color: map-get($color, tint);
+            border-color: map-get($color, tint);
+        }
+    }
+}
+
+/// Buton icon only
+.button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    line-height: 1;
+    color: $button-color;
+}

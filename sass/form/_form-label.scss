@@ -1,0 +1,75 @@
+/// Form label
+$form-label-font-family: false !default;
+$form-label-font-weight: $font-weight-normal !default;
+$form-label-font-size: 0.875rem !default;
+$form-label-line-height: 1.5rem !default;
+
+$form-label-color: $grey-700 !default;
+$form-label-color-focus: $secondary !default;
+$form-label-color-success: $success !default;
+$form-label-color-error: $danger !default;
+$form-label-color-disabled: $grey !default;
+
+$form-label-background-color: $white !default;
+
+$form-label-offset-bottom: 0.25rem !default;
+
+/// Form label floating
+$form-label-floating-font-size: 1rem !default;
+
+$form-label-floating-focus-scale: 0.75 !default;
+$form-label-floating-padding-x: 0.375rem !default;
+$form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-label-floating-focus-scale;
+
+$form-label-floating-offset-top: $form-control-padding-y !default;
+$form-label-floating-offset-left: $form-control-padding-x !default;
+
+.form-label {
+    display: block;
+    margin-bottom: $form-label-offset-bottom;
+    @if $form-label-font-family {
+        font-family: $form-label-font-family;
+    }
+    font-weight: $form-label-font-weight;
+    font-size: $form-label-font-size;
+    line-height: $form-label-line-height;
+    color: $form-label-color;
+    transition-property: color;
+    transition-duration: $transition-duration;
+
+    &.floating {
+        position: absolute;
+        z-index: 1;
+        top: $form-label-floating-offset-top;
+        left: calc(#{$form-label-floating-offset-left} - #{$form-label-floating-padding-x-scaled});
+        margin-bottom: 0;
+        padding-left: $form-label-floating-padding-x-scaled;
+        padding-right: $form-label-floating-padding-x-scaled;
+        font-size: $form-label-floating-font-size;
+        background-color: $form-label-background-color;
+        pointer-events: none;
+        transform-origin: left center;
+        transition-property: color, transform;
+    }
+}
+
+.form-group.filled .form-label.floating,
+.form-group.focus .form-label.floating {
+    transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -100%, 0) scale($form-label-floating-focus-scale);
+}
+
+.form-group.focus .form-label {
+    color: $form-label-color-focus;
+}
+
+.form-group.success .form-label {
+    color: $form-label-color-success;
+}
+
+.form-group.error .form-label {
+    color: $form-label-color-error;
+}
+
+.form-group.disabled .form-label {
+    color: $form-label-color-disabled;
+}

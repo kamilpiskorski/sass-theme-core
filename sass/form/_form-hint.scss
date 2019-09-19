@@ -1,13 +1,13 @@
-/// Form info
+/// Form hint
 $form-hint-font-family: false !default;
 $form-hint-font-weight: $font-weight-normal !default;
-$form-hint-font-size: 0.875rem !default;
-$form-hint-line-height: 1.5rem !default;
+$form-hint-font-size: $font-size-script !default;
+$form-hint-line-height: 24px !default;
 
 $form-hint-color: $grey-700 !default;
 $form-hint-color-error: $danger !default;
 
-$form-hint-offset-top: 0.25rem !default;
+$form-hint-offset-top: 4px !default;
 
 .form-hint {
     display: block;

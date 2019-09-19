@@ -80,12 +80,7 @@ img {
 
 a {
     text-decoration: none;
-    color: $link-color;
-
-    &:hover {
-        text-decoration: underline;
-        color: $link-color-hover;
-    }
+    color: inherit;
 }
 
 strong {

@@ -1,9 +1,8 @@
 /// Form control
-/// @todo add error message and hint
 $form-control-font-family: false !default;
 $form-control-font-weight: $font-weight-normal !default;
-$form-control-font-size: 1rem !default;
-$form-control-line-height: 1.5rem !default;
+$form-control-font-size: 16px !default;
+$form-control-line-height: 25px !default;
 
 $form-control-color: $grey-900 !default;
 $form-control-color-placeholder: $grey !default;
@@ -26,15 +25,15 @@ $form-control-border-style-disabled: dashed !default;
 
 $form-control-border-radius: $border-radius !default;
 
-$form-control-padding-y: 0.75rem !default;
-$form-control-padding-x: 0.75rem !default;
+$form-control-padding-y: 12px !default;
+$form-control-padding-x: 12px !default;
 
 /// Form control icon
 $form-control-icon-color: $form-control-color !default;
 $form-control-icon-color-disabled: $form-control-color-disabled !default;
 
-$form-control-icon-offset-top: 1rem !default;
-$form-control-icon-offset-right: 1rem !default;
+$form-control-icon-offset-top: 16px !default;
+$form-control-icon-offset-right: 16px !default;
 
 .form-control {
     position: relative;
@@ -102,7 +101,7 @@ $form-control-icon-offset-right: 1rem !default;
     position: absolute;
     top: $form-control-icon-offset-top;
     right: $form-control-icon-offset-right;
-    line-height: 1;
+    line-height: 0;
     color: $form-control-icon-color;
     pointer-events: none;
 }

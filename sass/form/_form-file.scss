@@ -1,12 +1,12 @@
 /// Form file label
 $form-file-label-font-family: false !default;
 $form-file-label-font-weight: $font-weight-normal !default;
-$form-file-label-font-size: 0.875rem !default;
-$form-file-label-line-height: 1.5rem !default;
+$form-file-label-font-size: $font-size-script !default;
+$form-file-label-line-height: 24px !default;
 
 $form-file-label-color: $grey-700 !default;
 
-$form-file-label-offset-left: 1rem !default;
+$form-file-label-offset-left: 16px !default;
 
 .form-file {
     display: flex;

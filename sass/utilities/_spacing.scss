@@ -53,7 +53,7 @@
 }
 
 @each $size, $width in $grid {
-    @include rwd($size) {
+    @include min-width($size) {
         @each $number, $space in $spacing {
             .mt-#{$size}-#{$number} {
                 margin-top: $space;
@@ -113,7 +113,7 @@
 }
 
 @each $size, $width in $grid {
-    @include rwd($size) {
+    @include min-width($size) {
         @each $number, $space in $spacing {
             .pt-#{$size}-#{$number} {
                 padding-top: $space;

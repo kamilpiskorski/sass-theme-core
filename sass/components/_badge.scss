@@ -1,9 +1,9 @@
 /// Badge
-/// @todo add dynamic font-size and padding (not rem)
+/// @todo add dynamic font-size and padding (not px)
 $badge-font-family: false !default;
 $badge-font-weight: $font-weight-normal !default;
-$badge-font-size: 0.875rem !default;
-$badge-line-height: 1.5rem !default;
+$badge-font-size: $font-size-script !default;
+$badge-line-height: 24px !default;
 
 $badge-color: $grey-900 !default;
 $badge-solid-color: $white !default;
@@ -12,18 +12,18 @@ $badge-background-color: $grey-200 !default;
 
 $badge-border-width: 1px !default;
 $badge-border-color: $grey-400 !default;
-$badge-border-radius: 2rem !default;
+$badge-border-radius: 32px !default;
 
-$badge-padding-y: 0.5rem !default;
-$badge-padding-x: 1.25rem !default;
-$badge-padding-y-small: 0.25rem !default;
-$badge-padding-x-small: 1rem !default;
-$badge-padding-y-large: 0.75rem !default;
-$badge-padding-x-large: 1.5rem !default;
+$badge-padding-y: 8px !default;
+$badge-padding-x: 20px !default;
+$badge-padding-y-small: 4px !default;
+$badge-padding-x-small: 16px !default;
+$badge-padding-y-large: 12px !default;
+$badge-padding-x-large: 24px !default;
 
-$badge-icon-offset: 0.5rem !default;
-$badge-icon-offset-small: 0.25rem !default;
-$badge-icon-offset-large: 0.75rem !default;
+$badge-icon-offset: 8px !default;
+$badge-icon-offset-small: 4px !default;
+$badge-icon-offset-large: 12px !default;
 
 $badge-custom-colors: (
     badge-light: $grey-900

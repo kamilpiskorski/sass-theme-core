@@ -22,15 +22,21 @@
     }
 }
 
-@mixin rwd($size) {
+@mixin min-width($size) {
     @media (min-width: container-width($size)) {
+        @content;
+    }
+}
+
+@mixin max-width($size) {
+    @media (max-width: container-width($size) - 1px) {
         @content;
     }
 }
 
 @mixin container() {
     @each $size, $width in $grid {
-        @include rwd($size) {
+        @include min-width($size) {
             padding-left: container-padding($size);
             padding-right: container-padding($size);
         }
@@ -46,23 +52,25 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
 
     @each $size, $width in $grid {
-        @include rwd($size) {
+        @include min-width($size) {
             width: $width;
         }
     }
 
     &.fluid {
         width: auto;
-        margin-left: $grid-gap;
-        margin-right: $grid-gap;
     }
 }
 
 .columns {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -$grid-gap;
+    margin-right: -$grid-gap;
 }
 
 %column {
@@ -84,7 +92,7 @@
         @extend %column;
     }
 
-    @include rwd($size) {
+    @include min-width($size) {
         .column-#{$size} {
             flex-basis: 0;
             flex-grow: 1;
@@ -107,7 +115,7 @@
         }
     }
 
-    @include rwd($size) {
+    @include min-width($size) {
         @for $i from 1 through 12 {
             .column-#{$size}-#{$i} {
                 @include column($i);

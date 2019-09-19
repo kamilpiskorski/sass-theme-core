@@ -1,8 +1,8 @@
 /// Form label
 $form-label-font-family: false !default;
 $form-label-font-weight: $font-weight-normal !default;
-$form-label-font-size: 0.875rem !default;
-$form-label-line-height: 1.5rem !default;
+$form-label-font-size: $font-size-script !default;
+$form-label-line-height: 24px !default;
 
 $form-label-color: $grey-700 !default;
 $form-label-color-focus: $secondary !default;
@@ -12,13 +12,13 @@ $form-label-color-disabled: $grey !default;
 
 $form-label-background-color: $white !default;
 
-$form-label-offset-bottom: 0.25rem !default;
+$form-label-offset-bottom: 4px !default;
 
 /// Form label floating
-$form-label-floating-font-size: 1rem !default;
+$form-label-floating-font-size: 16px !default;
 
 $form-label-floating-focus-scale: 0.75 !default;
-$form-label-floating-padding-x: 0.375rem !default;
+$form-label-floating-padding-x: 6px !default;
 $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-label-floating-focus-scale;
 
 $form-label-floating-offset-top: $form-control-padding-y !default;

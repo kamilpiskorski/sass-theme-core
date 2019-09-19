@@ -1,8 +1,8 @@
 /// Notification
 $notification-font-family: false !default;
 $notification-font-weight: $font-weight-normal !default;
-$notification-font-size: 1rem !default;
-$notification-line-height: 1.5rem !default;
+$notification-font-size: 16px !default;
+$notification-line-height: 24px !default;
 
 $notification-color: $grey-900 !default;
 $notification-solid-color: $white !default;
@@ -11,11 +11,11 @@ $notification-background-color: $grey-200 !default;
 
 $notification-border-radius: $border-radius !default;
 
-$notification-padding-y: 1rem !default;
-$notification-padding-x: 1.5rem !default;
+$notification-padding-y: 16px !default;
+$notification-padding-x: 24px !default;
 
-$notification-button-padding-y: 0.5rem !default;
-$notification-button-padding-x: 0.75rem !default;
+$notification-button-padding-y: 8px !default;
+$notification-button-padding-x: 12px !default;
 
 $notification-custom-colors: (
     notification-light: $grey-900
@@ -44,7 +44,7 @@ $notification-custom-colors: (
     top: 0;
     right: 0;
     padding: $notification-button-padding-y $notification-button-padding-x;
-    line-height: 1;
+    line-height: 0;
 }
 
 @each $name, $color in $colors {

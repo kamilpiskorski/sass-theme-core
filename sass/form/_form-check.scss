@@ -1,9 +1,9 @@
 /// Form group check
-$form-group-check-offset: 1rem !default;
+$form-group-check-offset: 16px !default;
 
 /// Form check mark
-$form-check-mark-size: 1.5rem !default;
-$form-check-mark-radio-size: 0.5rem !default;
+$form-check-mark-size: 24px !default;
+$form-check-mark-radio-size: 8px !default;
 
 $form-check-mark-color: $white !default;
 $form-check-mark-color-checked: $white !default;
@@ -16,18 +16,18 @@ $form-check-mark-border-color: $grey-700 !default;
 $form-check-mark-border-color-checked: $form-check-mark-background-color-checked !default;
 $form-check-mark-border-radius: $border-radius !default;
 
-$form-check-mark-shadow-active: 0 0 0.125rem 0.125rem rgba($grey, 0.32) !default;
+$form-check-mark-shadow-active: 0 0 2px 2px rgba($grey, 0.32) !default;
 
 /// Form check label
 $form-check-label-font-family: false !default;
 $form-check-label-font-weight: $font-weight-normal !default;
-$form-check-label-font-size: 1rem !default;
-$form-check-label-line-height: 1.5rem !default;
+$form-check-label-font-size: 16px !default;
+$form-check-label-line-height: 24px !default;
 
 $form-check-label-color: $grey-700 !default;
 $form-check-label-color-checked: $grey-700 !default;
 
-$form-check-label-offset: 0.75rem !default;
+$form-check-label-offset: 12px !default;
 
 .form-check {
     position: relative;
@@ -62,7 +62,7 @@ $form-check-label-offset: 0.75rem !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+    line-height: 0;
     color: $form-check-mark-color;
     border-radius: $form-check-mark-border-radius;
     transition-property: background-color, border-color;

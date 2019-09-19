@@ -1,10 +1,10 @@
 /// Button
-/// @todo add dynamic font-size and padding (not rem)
+/// @todo add dynamic font-size and padding (not px)
 /// @todo add disabled status
 $button-font-family: false !default;
 $button-font-weight: $font-weight-medium !default;
-$button-font-size: 1rem !default;
-$button-line-height: 1.5rem !default;
+$button-font-size: 16px !default;
+$button-line-height: 1.5 !default;
 
 $button-color: $text-color !default;
 $button-color-hover: $white !default;
@@ -17,16 +17,16 @@ $button-border-width: 2px !default;
 $button-border-color: $grey-400 !default;
 $button-border-radius: $border-radius !default;
 
-$button-padding-y: 0.75rem !default;
-$button-padding-x: 1.5rem !default;
-$button-padding-y-small: 0.5rem !default;
-$button-padding-x-small: 1rem !default;
-$button-padding-y-large: 1rem !default;
-$button-padding-x-large: 2rem !default;
+$button-padding-y: 12px !default;
+$button-padding-x: 24px !default;
+$button-padding-y-small: 8px !default;
+$button-padding-x-small: 16px !default;
+$button-padding-y-large: 16px !default;
+$button-padding-x-large: 32px !default;
 
-$button-icon-offset: 0.75rem !default;
-$button-icon-offset-small: 0.5rem !default;
-$button-icon-offset-large: 1rem !default;
+$button-icon-offset: 12px !default;
+$button-icon-offset-small: 8px !default;
+$button-icon-offset-large: 16px !default;
 
 $button-solid-color: $white !default;
 $button-solid-color-hover: $button-solid-color !default;
@@ -34,7 +34,7 @@ $button-solid-color-hover: $button-solid-color !default;
 $button-outline-color-hover: $white !default;
 $button-outline-background-color: transparent !default;
 
-$button-shadow-active: 0 0 0.125rem 0.125rem rgba($grey, 0.32) !default;
+$button-shadow-active: 0 0 2px 2px rgba($grey, 0.32) !default;
 
 $button-custom-colors: (
     button-solid-light: $grey-900,
@@ -176,7 +176,7 @@ $button-custom-colors: (
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    line-height: 1;
+    padding: 12px;
+    line-height: 0;
     color: $button-color;
 }

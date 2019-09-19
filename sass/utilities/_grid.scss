@@ -4,7 +4,7 @@
 }
 
 @function container-padding($size) {
-    @return calc(50% - #{container-width($size) / 2});
+    @return calc(50% - #{container-width($size) / 2 - $grid-gap});
 }
 
 @function column-width($number, $size: null) {
@@ -35,6 +35,9 @@
 }
 
 @mixin container() {
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+
     @each $size, $width in $grid {
         @include min-width($size) {
             padding-left: container-padding($size);

@@ -21,15 +21,15 @@ $badge-padding-x-small: 16px !default;
 $badge-padding-y-large: 12px !default;
 $badge-padding-x-large: 24px !default;
 
-$badge-icon-offset: 8px !default;
-$badge-icon-offset-small: 4px !default;
-$badge-icon-offset-large: 12px !default;
+$badge-icon-offset: 12px !default;
+$badge-icon-offset-small: 8px !default;
+$badge-icon-offset-large: 16px !default;
 
 $badge-custom-colors: (
     badge-light: $grey-900
 ) !default;
 
-.badge {
+@mixin badge() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +55,7 @@ $badge-custom-colors: (
     }
 }
 
-.badge-small {
+@mixin badge-small() {
     padding: calc(#{$badge-padding-y-small} - #{$badge-border-width}) calc(#{$badge-padding-x-small} - #{$badge-border-width});
 
     .icon:first-child {
@@ -67,7 +67,7 @@ $badge-custom-colors: (
     }
 }
 
-.badge-large {
+@mixin badge-large() {
     padding: calc(#{$badge-padding-y-large} - #{$badge-border-width}) calc(#{$badge-padding-x-large} - #{$badge-border-width});
 
     .icon:first-child {
@@ -79,14 +79,32 @@ $badge-custom-colors: (
     }
 }
 
+@mixin badge-color($name) {
+    $color: map-get($colors, $name);
+
+    @if map-get($badge-custom-colors, badge-#{$name}) {
+        color: map-get($badge-custom-colors, badge-#{$name});
+    } @else {
+        color: $badge-solid-color;
+    }
+    background-color: map-get($color, $name);
+    border-color: map-get($color, shade);
+}
+
+.badge {
+    @include badge();
+}
+
+.badge-small {
+    @include badge-small();
+}
+
+.badge-large {
+    @include badge-large();
+}
+
 @each $name, $color in $colors {
     .badge-#{$name} {
-        @if map-get($badge-custom-colors, badge-#{$name}) {
-            color: map-get($badge-custom-colors, badge-#{$name});
-        } @else {
-            color: $badge-solid-color;
-        }
-        background-color: map-get($color, $name);
-        border-color: map-get($color, shade);
+        @include badge-color($name);
     }
 }

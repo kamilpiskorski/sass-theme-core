@@ -1,0 +1,30 @@
+/// Icon
+$icon-font-family: 'icons' !default;
+$icon-font-size: 16px !default;
+$icon-line-height: 1 !default;
+
+$icon-font-size-others: (
+    24: 24px,
+    32: 32px,
+    48: 48px
+) !default;
+
+@font-face {
+    font-family: $icon-font-family;
+    src: url("assets/fonts/icons.woff2") format("woff2"), url("assets/fonts/icons.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    display: inline-block;
+    text-transform: none;
+    font: normal normal normal $icon-font-size/$icon-line-height $icon-font-family;
+    speak: none;
+}
+
+@each $number, $font-size in $icon-font-size-others {
+    .icon-#{$number} {
+        font-size: $font-size;
+    }
+}

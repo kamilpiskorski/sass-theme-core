@@ -1,7 +1,7 @@
 /// Notification
 $notification-font-family: false !default;
 $notification-font-weight: $font-weight-normal !default;
-$notification-font-size: 16px !default;
+$notification-font-size: $font-size !default;
 $notification-line-height: 24px !default;
 
 $notification-color: $grey-900 !default;

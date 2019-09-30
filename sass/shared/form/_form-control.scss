@@ -32,7 +32,6 @@ $form-control-padding-x: 12px !default;
 $form-control-icon-color: $form-control-color !default;
 $form-control-icon-color-disabled: $form-control-color-disabled !default;
 
-$form-control-icon-offset-top: 16px !default;
 $form-control-icon-offset-right: 16px !default;
 
 .form-control {
@@ -99,11 +98,21 @@ $form-control-icon-offset-right: 16px !default;
 
 .form-control-icon {
     position: absolute;
-    top: $form-control-icon-offset-top;
+    top: 50%;
     right: $form-control-icon-offset-right;
     line-height: 0;
     color: $form-control-icon-color;
+    transform: translateY(-50%);
     pointer-events: none;
+}
+
+button.form-control-icon {
+    pointer-events: auto;
+}
+
+.form-control-input[type="text"] ~ .form-control-icon .icon:first-child:not(:last-child),
+.form-control-input[type="password"] ~ .form-control-icon .icon:last-child:not(:first-child) {
+    display: none;
 }
 
 .form-group.disabled .form-control-icon {

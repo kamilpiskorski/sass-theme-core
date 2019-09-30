@@ -3,8 +3,8 @@
 /// @todo add disabled status
 $button-font-family: false !default;
 $button-font-weight: $font-weight-medium !default;
-$button-font-size: 16px !default;
-$button-line-height: 1.5 !default;
+$button-font-size: $font-size !default;
+$button-line-height: 24px !default;
 
 $button-color: $text-color !default;
 $button-color-hover: $white !default;
@@ -28,22 +28,17 @@ $button-icon-offset: 12px !default;
 $button-icon-offset-small: 8px !default;
 $button-icon-offset-large: 16px !default;
 
-$button-solid-color: $white !default;
-$button-solid-color-hover: $button-solid-color !default;
-
-$button-outline-color-hover: $white !default;
-$button-outline-background-color: transparent !default;
-
 $button-shadow-active: 0 0 2px 2px rgba($grey, 0.32) !default;
 
 $button-custom-colors: (
     button-solid-light: $grey-900,
     button-solid-light-hover: $grey-900,
     button-outline-light: $grey-900,
-    button-outline-light-hover: $grey-900
+    button-outline-light-hover: $grey-900,
+    button-action-light: $grey-500
 ) !default;
 
-.button {
+@mixin button() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +83,8 @@ $button-custom-colors: (
     }
 }
 
-.button-small {
+@mixin button-small() {
+    font-size: $font-size-small;
     padding: calc(#{$button-padding-y-small} - #{$button-border-width}) calc(#{$button-padding-x-small} - #{$button-border-width});
 
     .icon:first-child {
@@ -100,7 +96,7 @@ $button-custom-colors: (
     }
 }
 
-.button-large {
+@mixin button-large() {
     padding: calc(#{$button-padding-y-large} - #{$button-border-width}) calc(#{$button-padding-x-large} - #{$button-border-width});
 
     .icon:first-child {
@@ -112,71 +108,115 @@ $button-custom-colors: (
     }
 }
 
-.button-full {
+@mixin button-full() {
     flex: 0 0 100%;
     width: 100%;
 }
 
+.button {
+    @include button();
+}
+
+.button-small {
+    @include button-small();
+}
+
+.button-large {
+    @include button-large();
+}
+
+.button-full {
+    @include button-full();
+}
+
+/// Button solid
+$button-solid-color: $white !default;
+$button-solid-color-hover: $button-solid-color !default;
+
+@mixin button-solid($name) {
+    $color: map-get($colors, $name);
+
+    @if map-get($button-custom-colors, button-solid-#{$name}) {
+        color: map-get($button-custom-colors, button-solid-#{$name});
+    } @else {
+        color: $button-solid-color;
+    }
+    background-color: map-get($color, $name);
+    border-color: map-get($color, $name);
+
+    &:hover {
+        @if map-get($button-custom-colors, button-solid-#{$name}-hover) {
+            color: map-get($button-custom-colors, button-solid-#{$name}-hover);
+        } @else {
+            color: $button-solid-color-hover;
+        }
+        background-color: map-get($color, shade);
+        border-color: map-get($color, shade);
+    }
+
+    &:active {
+        background-color: map-get($color, tint);
+        border-color: map-get($color, tint);
+    }
+}
+
 @each $name, $color in $colors {
     .button-solid-#{$name} {
-        @if map-get($button-custom-colors, button-solid-#{$name}) {
-            color: map-get($button-custom-colors, button-solid-#{$name});
+        @include button-solid($name);
+    }
+}
+
+/// Button outline
+$button-outline-color-hover: $white !default;
+$button-outline-background-color: transparent !default;
+
+@mixin button-outline($name) {
+    $color: map-get($colors, $name);
+
+    @if map-get($button-custom-colors, button-outline-#{$name}) {
+        color: map-get($button-custom-colors, button-outline-#{$name});
+    } @else {
+        color: map-get($color, $name);
+    }
+    background-color: $button-outline-background-color;
+    border-color: map-get($color, $name);
+
+    &:hover {
+        @if map-get($button-custom-colors, button-outline-#{$name}-hover) {
+            color: map-get($button-custom-colors, button-outline-#{$name}-hover);
         } @else {
-            color: $button-solid-color;
+            color: $button-outline-color-hover;
         }
-        background-color: map-get($color, $name);
-        border-color: map-get($color, $name);
+        background-color: map-get($color, shade);
+        border-color: map-get($color, shade);
+    }
 
-        &:hover {
-            @if map-get($button-custom-colors, button-solid-#{$name}-hover) {
-                color: map-get($button-custom-colors, button-solid-#{$name}-hover);
-            } @else {
-                color: $button-solid-color-hover;
-            }
-            background-color: map-get($color, shade);
-            border-color: map-get($color, shade);
-        }
-
-        &:active {
-            background-color: map-get($color, tint);
-            border-color: map-get($color, tint);
-        }
+    &:active {
+        background-color: map-get($color, tint);
+        border-color: map-get($color, tint);
     }
 }
 
 @each $name, $color in $colors {
     .button-outline-#{$name} {
-        @if map-get($button-custom-colors, button-outline-#{$name}) {
-            color: map-get($button-custom-colors, button-outline-#{$name});
-        } @else {
-            color: map-get($color, $name);
-        }
-        background-color: $button-outline-background-color;
-        border-color: map-get($color, $name);
-
-        &:hover {
-            @if map-get($button-custom-colors, button-outline-#{$name}-hover) {
-                color: map-get($button-custom-colors, button-outline-#{$name}-hover);
-            } @else {
-                color: $button-outline-color-hover;
-            }
-            background-color: map-get($color, shade);
-            border-color: map-get($color, shade);
-        }
-
-        &:active {
-            background-color: map-get($color, tint);
-            border-color: map-get($color, tint);
-        }
+        @include button-outline($name);
     }
 }
 
-/// Buton icon only
-.button-icon {
+/// Button icon
+$button-icon-color: $button-color !default;
+$button-icon-padding: 12px !default;
+
+@mixin button-icon() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: $button-icon-padding;
+    text-align: center;
     line-height: 0;
-    color: $button-color;
+    color: $button-icon-color;
+}
+
+.button-icon {
+    @include button-icon();
 }

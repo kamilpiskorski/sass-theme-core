@@ -3,30 +3,23 @@
 /*            CSS Stylesheet           */
 /*      (C) 2019 www.mvpdoers.com      */
 /*-------------------------------------*/
+
 // ---------------------
-//     BASE
+//     CORE
 // ---------------------
-@import "base/variables";
-@import "base/reset";
-@import "base/general";
+@import "core";
+
 // ---------------------
-//     UTILS
+//     SHARED
 // ---------------------
-@import "utilities/grid";
-@import "utilities/spacing";
-@import "utilities/typography";
+@import "shared";
+
 // ---------------------
-//     COMPONENTS
+//     LAYOUTS
 // ---------------------
-@import "components/badge";
-@import "components/button";
-@import "components/notification";
+ @import "layouts";
+
 // ---------------------
-//     FORM
+//     MODULES
 // ---------------------
-@import "form/form-check";
-@import "form/form-control";
-@import "form/form-file";
-@import "form/form-group";
-@import "form/form-hint";
-@import "form/form-label";
+// @import "modules/landing";

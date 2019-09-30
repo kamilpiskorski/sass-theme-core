@@ -27,19 +27,21 @@ npm run build
 ## Folder structure
 
     .
-    ├── core
-    │    ├── base
-    │    │   ├── reset
-    │    │   ├── variables
-    │    │   └── general
-    │    └── utilities          # eg. grid, spacing
-    ├── shared
-    │    ├── components         # eg. navbar, footer, notifications
-    │    ├── elements           # eg. button, icon, typography
-    │    └── form
-    ├── layouts                 # eg. base, auth
-    └── modules
-         └── [module name]
-             ├── components
-             ├── elements
-             └── sections
+    ├── css                         # Compiled files
+    └── sass                        # Source files
+        ├── core
+        │    ├── base
+        │    │   ├── reset
+        │    │   ├── variables
+        │    │   └── general
+        │    └── utilities          # eg. grid, spacing
+        ├── shared
+        │    ├── components         # eg. navbar, footer, notifications
+        │    ├── elements           # eg. button, icon, typography
+        │    └── form
+        ├── layouts                 # eg. base, auth
+        └── modules
+             └── [module name]
+                 ├── components
+                 ├── elements
+                 └── sections

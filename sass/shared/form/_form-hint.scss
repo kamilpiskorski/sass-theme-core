@@ -1,27 +1,19 @@
 /// Form hint
-$form-hint-font-family: false !default;
-$form-hint-font-weight: $font-weight-normal !default;
-$form-hint-font-size: $font-size-script !default;
-$form-hint-line-height: 24px !default;
-
-$form-hint-color: $grey-700 !default;
-$form-hint-color-error: $danger !default;
-
-$form-hint-offset-top: 4px !default;
+.form-hints {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .form-hint {
     display: block;
-    margin-top: $form-hint-offset-top;
-    text-align: right;
-    @if $form-hint-font-family {
-        font-family: $form-hint-font-family;
-    }
-    font-weight: $form-hint-font-weight;
-    font-size: $form-hint-font-size;
-    line-height: $form-hint-line-height;
-    color: $form-hint-color;
+    margin-top: 8px;
+    font-size: $font-size-script;
+    color: $text-color;
 
     &.error {
-        color: $form-hint-color-error;
+        margin-left: auto;
+        text-align: right;
+        color: map-get($danger, 60)
     }
 }

@@ -1,38 +1,8 @@
 /// Form control
-$form-control-font-family: false !default;
-$form-control-font-weight: $font-weight-normal !default;
-$form-control-font-size: 16px !default;
-$form-control-line-height: 24px !default;
-
-$form-control-color: $grey-900 !default;
-$form-control-color-placeholder: $grey !default;
-$form-control-color-disabled: $grey !default;
-
-$form-control-background-color: $white !default;
-
-$form-control-border-width: 1px !default;
-$form-control-border-style: solid !default;
-$form-control-border-color: $grey-400 !default;
-
-$form-control-border-width-focus: 2px !default;
-$form-control-border-color-focus: $secondary !default;
-
-$form-control-border-color-success: $success !default;
-$form-control-border-color-error: $danger !default;
-
-$form-control-border-color-disabled: $form-control-border-color !default;
-$form-control-border-style-disabled: dashed !default;
-
-$form-control-border-radius: $border-radius !default;
-
-$form-control-padding-y: 12px !default;
-$form-control-padding-x: 12px !default;
-
-/// Form control icon
-$form-control-icon-color: $form-control-color !default;
-$form-control-icon-color-disabled: $form-control-color-disabled !default;
-
-$form-control-icon-offset-right: 16px !default;
+$form-control-border-color-hover: map-get($secondary, 50) !default;
+$form-control-border-color-focus: map-get($secondary, 80) !default;
+$form-control-border-color-error: map-get($danger, 60) !default;
+$form-control-border-color-disabled: map-get($grey, 40) !default;
 
 .form-control {
     position: relative;
@@ -45,65 +15,85 @@ $form-control-icon-offset-right: 16px !default;
         left: 0;
         width: 100%;
         height: 100%;
-        border: $form-control-border-width $form-control-border-style $form-control-border-color;
-        border-radius: $form-control-border-radius;
-        transition-property: border-width, border-color;
+        border: 1px solid map-get($grey, 60);
+        border-radius: $border-radius;
+        transition-property: border-width, border-color, box-shadow;
         transition-duration: $transition-duration;
         pointer-events: none;
     }
 }
 
-.form-group.focus .form-control::after {
-    border-width: $form-control-border-width-focus;
-    border-color: $form-control-border-color-focus;
-}
-
-.form-group.success .form-control::after {
-    border-color: $form-control-border-color-success;
+.form-group:hover .form-control::after {
+    border-color: $form-control-border-color-hover;
 }
 
 .form-group.error .form-control::after {
     border-color: $form-control-border-color-error;
 }
 
+.form-group.focused .form-control::after {
+    border-color: $form-control-border-color-focus;
+    box-shadow: 0 0 0 4px rgba(map-get($secondary, 60), 0.32);
+}
+
 .form-group.disabled .form-control::after {
-    border-style: $form-control-border-style-disabled;
+    border-style: dashed;
     border-color: $form-control-border-color-disabled;
 }
 
-.form-control-input {
+.form-control-input,
+.form-control-button {
     display: block;
     width: 100%;
-    padding: $form-control-padding-y $form-control-padding-x;
-    @if $form-control-font-family {
-        font-family: $form-control-font-family;
-    }
-    font-weight: $form-control-font-weight;
-    font-size: $form-control-font-size;
-    line-height: $form-control-line-height;
-    color: $form-control-color;
-    background-color: $form-control-background-color;
-    border-radius: $form-control-border-radius;
+    height: 48px;
+    padding: 12px;
+    text-align: left;
+    color: map-get($grey, 100);
+    background-color: $white;
+    border-radius: $border-radius;
 
-    &::placeholder {
-        color: $form-control-color-placeholder;
+    &.center {
+        text-align: center;
     }
 }
 
-.form-group.disabled .form-control-input {
-    -webkit-text-fill-color: $form-control-color-disabled;
-    color: $form-control-color-disabled;
+.form-control-input::placeholder {
+    color: $text-color;
+}
+
+textarea.form-control-input {
+    resize: none;
+    height: 120px;
+}
+
+.form-group.small .form-control-input,
+.form-group.small .form-control-button {
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.form-group.disabled .form-control-input,
+.form-group.disabled .form-control-button {
+    color: map-get($grey, 60);
     pointer-events: none;
+}
+
+.form-group.disabled .form-control-input {
+    -webkit-text-fill-color: map-get($grey, 60);
 }
 
 .form-control-icon {
     position: absolute;
     top: 50%;
-    right: $form-control-icon-offset-right;
-    line-height: 0;
-    color: $form-control-icon-color;
+    right: 16px;
+    color: map-get($grey, 100);
     transform: translateY(-50%);
     pointer-events: none;
+}
+
+.form-control-icon {
+    line-height: 0;
 }
 
 button.form-control-icon {
@@ -116,5 +106,5 @@ button.form-control-icon {
 }
 
 .form-group.disabled .form-control-icon {
-    color: $form-control-icon-color-disabled;
+    color: map-get($grey, 40);
 }

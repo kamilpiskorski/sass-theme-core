@@ -16,11 +16,15 @@ $icon-font-size-others: (
     font-style: normal;
 }
 
-.icon {
+@mixin icon() {
     display: inline-block;
     text-transform: none;
     font: normal normal normal $icon-font-size/$icon-line-height $icon-font-family;
     speak: none;
+}
+
+.icon {
+    @include icon();
 }
 
 @each $number, $font-size in $icon-font-size-others {

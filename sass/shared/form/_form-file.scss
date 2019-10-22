@@ -1,16 +1,9 @@
 /// Form file label
-$form-file-label-font-family: false !default;
-$form-file-label-font-weight: $font-weight-normal !default;
-$form-file-label-font-size: $font-size-script !default;
-$form-file-label-line-height: 24px !default;
-
-$form-file-label-color: $grey-700 !default;
-
-$form-file-label-offset-left: 16px !default;
-
-.form-file {
-    display: flex;
-    align-items: baseline;
+@include min-width(sm) {
+    .form-file {
+        display: flex;
+        align-items: baseline;
+    }
 }
 
 .form-file-browse {
@@ -30,14 +23,14 @@ $form-file-label-offset-left: 16px !default;
 
 .form-file-label {
     display: block;
-    flex: 1 0 0;
-    max-width: 100%;
-    margin-left: $form-file-label-offset-left;
-    @if $form-file-label-font-family {
-        font-family: $form-file-label-font-family;
+    margin-top: 8px;
+    font-size: $font-size-script;
+    color: $text-color;
+
+    @include min-width(sm) {
+        flex: 1 0 0;
+        max-width: 100%;
+        margin-top: 0;
+        margin-left: 16px;
     }
-    font-weight: $form-file-label-font-weight;
-    font-size: $form-file-label-font-size;
-    line-height: $form-file-label-line-height;
-    color: $form-file-label-color;
 }

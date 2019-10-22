@@ -1,0 +1,61 @@
+/// Link
+@mixin link() {
+    text-decoration: underline;
+    font-weight: $font-weight-medium;
+    color: map-get($grey, 100);
+    transition-property: color, background-color, box-shadow;
+    transition-duration: $transition-duration;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: map-get($grey, 10);
+    }
+
+    &:active {
+        background-color: map-get($grey, 30);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
+    }
+
+    &.disabled,
+    &[disabled] {
+        color: map-get($grey, 60) !important;
+        background: none !important;
+        box-shadow: none !important;
+        pointer-events: none;
+    }
+}
+
+.link {
+    @include link();
+}
+
+/// Link color
+@mixin link-color($name) {
+    $color: map-get($colors, $name);
+
+    color: map-get($color, 60);
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: map-get($color, 60);
+    }
+
+    &:active {
+        background-color: map-get($color, 80);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 4px rgba(map-get($color, 40), 0.56);
+    }
+}
+
+@each $name, $color in $colors {
+    .link-#{$name} {
+        @include link-color($name);
+    }
+}

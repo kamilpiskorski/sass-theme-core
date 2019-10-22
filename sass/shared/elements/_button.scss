@@ -1,110 +1,87 @@
 /// Button
-/// @todo add dynamic font-size and padding (not px)
-/// @todo add disabled status
-$button-font-family: false !default;
-$button-font-weight: $font-weight-medium !default;
-$button-font-size: $font-size !default;
-$button-line-height: 24px !default;
-
-$button-color: $text-color !default;
-$button-color-hover: $white !default;
-
-$button-background-color: $white !default;
-$button-background-color-hover: $grey-400 !default;
-$button-background-color-active: $grey-500 !default;
-
-$button-border-width: 2px !default;
-$button-border-color: $grey-400 !default;
-$button-border-radius: $border-radius !default;
-
-$button-padding-y: 12px !default;
-$button-padding-x: 24px !default;
-$button-padding-y-small: 8px !default;
-$button-padding-x-small: 16px !default;
-$button-padding-y-large: 16px !default;
-$button-padding-x-large: 32px !default;
-
-$button-icon-offset: 12px !default;
-$button-icon-offset-small: 8px !default;
-$button-icon-offset-large: 16px !default;
-
-$button-shadow-active: 0 0 2px 2px rgba($grey, 0.32) !default;
-
-$button-custom-colors: (
-    button-solid-light: $grey-900,
-    button-solid-light-hover: $grey-900,
-    button-outline-light: $grey-900,
-    button-outline-light-hover: $grey-900,
-    button-action-light: $grey-500
-) !default;
-
 @mixin button() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: calc(#{$button-padding-y} - #{$button-border-width}) calc(#{$button-padding-x} - #{$button-border-width});
+    padding: 10px 22px;
     text-align: center;
-    @if $button-font-family {
-        font-family: $button-font-family;
-    }
-    font-weight: $button-font-weight;
-    font-size: $button-font-size;
-    line-height: $button-line-height;
-    color: $button-color;
-    background-color: $button-background-color;
-    border: $button-border-width solid $button-border-color;
-    border-radius: $button-border-radius;
+    font-weight: $font-weight-medium;
+    color: map-get($grey, 100);
+    background-color: $white;
+    border: 2px solid $white;
+    border-radius: $border-radius;
     cursor: pointer;
     transition-property: color, background-color, border-color, box-shadow;
     transition-duration: $transition-duration;
 
     &:hover {
         text-decoration: none;
-        color: $button-color-hover;
-        background-color: $button-background-color-hover;
-        border-color: $button-background-color-hover;
+        background-color: map-get($grey, 10);
+        border-color: map-get($grey, 10);
     }
 
     &:active {
-        background-color: $button-background-color-active;
-        border-color: $button-background-color-active;
+        background-color: map-get($grey, 30);
+        border-color: map-get($grey, 30);
     }
 
     &:focus:not(:active) {
-        box-shadow: $button-shadow-active;
+        box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
+    }
+
+    &.disabled,
+    &[disabled] {
+        color: map-get($grey, 60) !important;
+        background-color: map-get($grey, 30) !important;
+        border-color: map-get($grey, 30) !important;
+        box-shadow: none !important;
+        pointer-events: none;
     }
 
     .icon:first-child {
-        margin-right: $button-icon-offset;
+        margin-right: 12px;
     }
 
     .icon:last-child {
-        margin-left: $button-icon-offset;
+        margin-left: 12px;
     }
 }
 
 @mixin button-small() {
     font-size: $font-size-small;
-    padding: calc(#{$button-padding-y-small} - #{$button-border-width}) calc(#{$button-padding-x-small} - #{$button-border-width});
+    padding: 7px 14px;
 
     .icon:first-child {
-        margin-right: $button-icon-offset-small;
+        margin-right: 8px;
     }
 
     .icon:last-child {
-        margin-left: $button-icon-offset-small;
+        margin-left: 8px;
+    }
+}
+
+@mixin button-normal() {
+    font-size: $font-size;
+    padding: 10px 22px;
+
+    .icon:first-child {
+        margin-right: 12px;
+    }
+
+    .icon:last-child {
+        margin-left: 12px;
     }
 }
 
 @mixin button-large() {
-    padding: calc(#{$button-padding-y-large} - #{$button-border-width}) calc(#{$button-padding-x-large} - #{$button-border-width});
+    padding: 14px 30px;
 
     .icon:first-child {
-        margin-right: $button-icon-offset-large;
+        margin-right: 16px;
     }
 
     .icon:last-child {
-        margin-left: $button-icon-offset-large;
+        margin-left: 16px;
     }
 }
 
@@ -130,33 +107,25 @@ $button-custom-colors: (
 }
 
 /// Button solid
-$button-solid-color: $white !default;
-$button-solid-color-hover: $button-solid-color !default;
-
 @mixin button-solid($name) {
     $color: map-get($colors, $name);
 
-    @if map-get($button-custom-colors, button-solid-#{$name}) {
-        color: map-get($button-custom-colors, button-solid-#{$name});
-    } @else {
-        color: $button-solid-color;
-    }
-    background-color: map-get($color, $name);
-    border-color: map-get($color, $name);
+    color: $white;
+    background-color: map-get($color, 60);
+    border-color: map-get($color, 60);
 
     &:hover {
-        @if map-get($button-custom-colors, button-solid-#{$name}-hover) {
-            color: map-get($button-custom-colors, button-solid-#{$name}-hover);
-        } @else {
-            color: $button-solid-color-hover;
-        }
-        background-color: map-get($color, shade);
-        border-color: map-get($color, shade);
+        background-color: map-get($color, 50);
+        border-color: map-get($color, 50);
     }
 
     &:active {
-        background-color: map-get($color, tint);
-        border-color: map-get($color, tint);
+        background-color: map-get($color, 70);
+        border-color: map-get($color, 70);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
     }
 }
 
@@ -167,33 +136,47 @@ $button-solid-color-hover: $button-solid-color !default;
 }
 
 /// Button outline
-$button-outline-color-hover: $white !default;
-$button-outline-background-color: transparent !default;
-
 @mixin button-outline($name) {
     $color: map-get($colors, $name);
 
-    @if map-get($button-custom-colors, button-outline-#{$name}) {
-        color: map-get($button-custom-colors, button-outline-#{$name});
-    } @else {
-        color: map-get($color, $name);
-    }
-    background-color: $button-outline-background-color;
-    border-color: map-get($color, $name);
+    color: map-get($color, 60);
+    background-color: transparent;
+    border-color: map-get($color, 60);
 
     &:hover {
-        @if map-get($button-custom-colors, button-outline-#{$name}-hover) {
-            color: map-get($button-custom-colors, button-outline-#{$name}-hover);
-        } @else {
-            color: $button-outline-color-hover;
-        }
-        background-color: map-get($color, shade);
-        border-color: map-get($color, shade);
+        background-color: map-get($color, 10);
+        border-color: map-get($color, 50);
     }
 
     &:active {
-        background-color: map-get($color, tint);
-        border-color: map-get($color, tint);
+        color: map-get($color, 70);
+        background-color: map-get($color, 20);
+        border-color: map-get($color, 70);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
+    }
+}
+
+@mixin button-outline-dark() {
+    color: $text-color;
+    background-color: transparent;
+    border-color: map-get($grey, 80);
+
+    &:hover {
+        background-color: map-get($grey, 30);
+        border-color: map-get($grey, 70);
+    }
+
+    &:active {
+        color: map-get($grey, 90);
+        background-color: map-get($grey, 40);
+        border-color: map-get($grey, 90);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
     }
 }
 
@@ -203,18 +186,37 @@ $button-outline-background-color: transparent !default;
     }
 }
 
-/// Button icon
-$button-icon-color: $button-color !default;
-$button-icon-padding: 12px !default;
+.button-outline-dark {
+    @include button-outline-dark();
+}
 
+/// Button icon
 @mixin button-icon() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: $button-icon-padding;
+    padding: 12px;
     text-align: center;
     line-height: 0;
-    color: $button-icon-color;
+    color: $text-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: $transition-duration;
+
+    &:hover {
+        background-color: map-get($grey, 10);
+        border-color: map-get($grey, 10);
+    }
+
+    &:active {
+        background-color: map-get($grey, 30);
+        border-color: map-get($grey, 30);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 3px rgba(map-get($grey, 80), 0.32);
+    }
 }
 
 .button-icon {

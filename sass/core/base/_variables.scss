@@ -3,96 +3,80 @@
 $white: white !default;
 $black: black !default;
 
-$grey: #8E99AB !default;
-$grey-100: #F5F7FA !default;
-$grey-200: #EBEFF5 !default;
-$grey-300: #DDE3ED !default;
-$grey-400: #C8D1E0 !default;
-$grey-500: #AFBACC !default;
-$grey-600: #707A8A !default;
-$grey-700: #58606E !default;
-$grey-800: #434A54 !default;
-$grey-900: #333840 !default;
+$grey: (
+    10: #F5F7FA,
+    20: #EBEFF5,
+    30: #DDE3ED,
+    40: #C8D1E0,
+    50: #AFBACC,
+    60: #8E99AB,
+    70: #707A8A,
+    80: #58606E,
+    90: #434A54,
+    100: #333840
+) !default;
 
-$primary: #FF7900 !default;
-$primary-100: #FFEFE2 !default;
-$primary-200: #FFDFC3 !default;
-$primary-300: #FFCCA0 !default;
-$primary-400: #FFB677 !default;
-$primary-500: #FF9B44 !default;
-$primary-600: #E66B00 !default;
-$primary-700: #CA5E00 !default;
-$primary-800: #A74E00 !default;
-$primary-900: #783800 !default;
+$primary: (
+    10: #FFEFE2,
+    20: #FFDFC3,
+    30: #FFCCA0,
+    40: #FFB677,
+    50: #FF9B44,
+    60: #FF7900,
+    70: #E66B00,
+    80: #CA5E00,
+    90: #A74E00,
+    100: #783800
+) !default;
 
-$secondary: #0482C5 !default;
-$secondary-100: #E4F1F8 !default;
-$secondary-200: #C6E3F1 !default;
-$secondary-300: #A4D2EA !default;
-$secondary-400: #7CBFE0 !default;
-$secondary-500: #4AA7D5 !default;
-$secondary-600: #0378B1 !default;
-$secondary-700: #03689B !default;
-$secondary-800: #025680 !default;
-$secondary-900: #013D5B !default;
+$secondary: (
+    10: #E4F1F8,
+    20: #C6E3F1,
+    30: #A4D2EA,
+    40: #7CBFE0,
+    50: #4AA7D5,
+    60: #0482C5,
+    70: #0378B1,
+    80: #03689B,
+    90: #025680,
+    100: #013D5B
+) !default;
 
-$success: #3EC543 !default;
-$success-100: #E3F8EA !default;
-$success-200: #C5F1D4 !default;
-$success-300: #A3E9BA !default;
-$success-400: #7BE09C !default;
-$success-500: #48D477 !default;
-$success-600: #37B23D !default;
-$success-700: #2F9C36 !default;
-$success-800: #25802C !default;
-$success-900: #185D20 !default;
+$success: (
+    10: #E3F8EA,
+    20: #C5F1D4,
+    30: #A3E9BA,
+    40: #7BE09C,
+    50: #48D477,
+    60: #3EC543,
+    70: #37B23D,
+    80: #2F9C36,
+    90: #25802C,
+    100: #185D20
+) !default;
 
-$danger: #C50424 !default;
-$danger-100: #FAEAEC !default;
-$danger-200: #F4D2D8 !default;
-$danger-300: #EEB7C0 !default;
-$danger-400: #E695A3 !default;
-$danger-500: #DC687B !default;
-$danger-600: #B20320 !default;
-$danger-700: #9C031C !default;
-$danger-800: #810217 !default;
-$danger-900: #5D0111 !default;
+$danger: (
+    10: #FAEAEC,
+    20: #F4D2D8,
+    30: #EEB7C0,
+    40: #E695A3,
+    50: #DC687B,
+    60: #C50424,
+    70: #B20320,
+    80: #9C031C,
+    90: #810217,
+    100: #5D0111
+) !default;
 
 $colors: (
-    light: (
-        light: $grey-100,
-        shade: $grey-300,
-        tint: $grey-200
-    ),
-    dark: (
-        dark: $grey-700,
-        shade: $grey-900,
-        tint: $grey-600
-    ),
-    primary: (
-        primary: $primary,
-        shade: $primary-700,
-        tint: $primary-500
-    ),
-    secondary: (
-        secondary: $secondary,
-        shade: $secondary-700,
-        tint: $secondary-500
-    ),
-    success: (
-        success: $success,
-        shade: $success-700,
-        tint: $success-500
-    ),
-    danger: (
-        danger: $danger,
-        shade: $danger-700,
-        tint: $danger-500
-    )
-);
+    primary: $primary,
+    secondary: $secondary,
+    success: $success,
+    danger: $danger
+) !default;
 
 /// Borders
-$border-color: $grey-400 !default;
+$border-color: map-get($grey, 40) !default;
 $border-radius: 4px !default;
 
 /// Typography
@@ -118,27 +102,17 @@ $font-size-heading: (
     6: 16px
 );
 
-$strong-font-weight: $font-weight-bold !default;
-
-$text-color: $grey-700 !default;
-
-$link-color: $secondary-600 !default;
-$link-color-hover: $secondary-700 !default;
+$text-color: map-get($grey, 80) !default;
 
 /// Grid
 $grid-gap: 16px !default;
 
-$grid-sm: 769px !default;
-$grid-md: 960px !default;
-$grid-lg: 1152px !default;
-$grid-xl: 1344px !default;
-
 $grid: (
-    sm: $grid-sm,
-    md: $grid-md,
-    lg: $grid-lg,
-    xl: $grid-xl
-);
+    sm: 769px,
+    md: 960px,
+    lg: 1152px,
+    xl: 1344px
+) !default;
 
 /// Spacing
 $spacing: (
@@ -151,7 +125,7 @@ $spacing: (
     7: 48px,
     8: 56px,
     9: 64px
-);
+) !default;
 
 /// Transition
-$transition-duration: 0.3s;
+$transition-duration: 0.3s !default;

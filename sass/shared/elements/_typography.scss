@@ -1,12 +1,8 @@
 /// Heading
-$heading-font-family: $font-family-secondary !default;
-$heading-font-weight: $font-weight-semibold !default;
-$heading-color: $grey-900 !default;
-
 %text-heading {
-  font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
-  color: $heading-color;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-semibold;
+  color: map-get($grey, 100);
 }
 
 @each $number, $font-size in $font-size-heading {

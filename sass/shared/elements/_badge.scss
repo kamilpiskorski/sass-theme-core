@@ -1,106 +1,25 @@
 /// Badge
-/// @todo add dynamic font-size and padding (not px)
-$badge-font-family: false !default;
-$badge-font-weight: $font-weight-normal !default;
-$badge-font-size: $font-size-script !default;
-$badge-line-height: 24px !default;
-
-$badge-color: $grey-900 !default;
-$badge-solid-color: $white !default;
-
-$badge-background-color: $grey-200 !default;
-
-$badge-border-width: 1px !default;
-$badge-border-color: $grey-400 !default;
-$badge-border-radius: 32px !default;
-
-$badge-padding-y: 8px !default;
-$badge-padding-x: 20px !default;
-$badge-padding-y-small: 4px !default;
-$badge-padding-x-small: 16px !default;
-$badge-padding-y-large: 12px !default;
-$badge-padding-x-large: 24px !default;
-
-$badge-icon-offset: 12px !default;
-$badge-icon-offset-small: 8px !default;
-$badge-icon-offset-large: 16px !default;
-
-$badge-custom-colors: (
-    badge-light: $grey-900
-) !default;
-
 @mixin badge() {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: calc(#{$badge-padding-y} - #{$badge-border-width}) calc(#{$badge-padding-x} - #{$badge-border-width});
+    padding: 4px 16px;
     text-align: center;
-    @if $badge-font-family {
-        font-family: $badge-font-family;
-    }
-    font-weight: $badge-font-weight;
-    font-size: $badge-font-size;
-    line-height: $badge-line-height;
-    color: $badge-color;
-    background-color: $badge-background-color;
-    border: $badge-border-width solid $badge-border-color;
-    border-radius: $badge-border-radius;
-
-    .icon:first-child {
-        margin-right: $badge-icon-offset;
-    }
-
-    .icon:last-child {
-        margin-left: $badge-icon-offset;
-    }
-}
-
-@mixin badge-small() {
-    padding: calc(#{$badge-padding-y-small} - #{$badge-border-width}) calc(#{$badge-padding-x-small} - #{$badge-border-width});
-
-    .icon:first-child {
-        margin-right: $badge-icon-offset-small;
-    }
-
-    .icon:last-child {
-        margin-left: $badge-icon-offset-small;
-    }
-}
-
-@mixin badge-large() {
-    padding: calc(#{$badge-padding-y-large} - #{$badge-border-width}) calc(#{$badge-padding-x-large} - #{$badge-border-width});
-
-    .icon:first-child {
-        margin-right: $badge-icon-offset-large;
-    }
-
-    .icon:last-child {
-        margin-left: $badge-icon-offset-large;
-    }
-}
-
-@mixin badge-color($name) {
-    $color: map-get($colors, $name);
-
-    @if map-get($badge-custom-colors, badge-#{$name}) {
-        color: map-get($badge-custom-colors, badge-#{$name});
-    } @else {
-        color: $badge-solid-color;
-    }
-    background-color: map-get($color, $name);
-    border-color: map-get($color, shade);
+    color: map-get($grey, 100);
+    background-color: $white;
+    border-radius: 16px;
 }
 
 .badge {
     @include badge();
 }
 
-.badge-small {
-    @include badge-small();
-}
+/// Badge color
+@mixin badge-color($name) {
+    $color: map-get($colors, $name);
 
-.badge-large {
-    @include badge-large();
+    color: $white;
+    background-color: map-get($color, 60);
 }
 
 @each $name, $color in $colors {

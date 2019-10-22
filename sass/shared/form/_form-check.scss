@@ -1,44 +1,32 @@
-/// Form group check
-$form-group-check-offset: 16px !default;
-
-/// Form check mark
+/// Form check
 $form-check-mark-size: 24px !default;
-$form-check-mark-radio-size: 8px !default;
 
-$form-check-mark-color: $white !default;
-$form-check-mark-color-checked: $white !default;
-
-$form-check-mark-background-color: $white !default;
-$form-check-mark-background-color-checked: $secondary !default;
-
-$form-check-mark-border-width: 2px !default;
-$form-check-mark-border-color: $grey-700 !default;
-$form-check-mark-border-color-checked: $form-check-mark-background-color-checked !default;
-$form-check-mark-border-radius: $border-radius !default;
-
-$form-check-mark-shadow-active: 0 0 2px 2px rgba($grey, 0.32) !default;
-
-/// Form check label
-$form-check-label-font-family: false !default;
-$form-check-label-font-weight: $font-weight-normal !default;
-$form-check-label-font-size: 16px !default;
-$form-check-label-line-height: 24px !default;
-
-$form-check-label-color: $grey-700 !default;
-$form-check-label-color-checked: $grey-700 !default;
-
-$form-check-label-offset: 12px !default;
+$form-check-color-hover: map-get($secondary, 50) !default;
+$form-check-color-checked: map-get($secondary, 60) !default;
+$form-check-color-error: map-get($danger, 60) !default;
+$form-check-color-disabled: map-get($grey, 40) !default;
 
 .form-check {
+    display: flex;
+    align-items: flex-start;
     position: relative;
 }
 
-.form-group-check .form-check:not(:last-child) {
-    margin-right: $form-group-check-offset;
+.form-group.disabled .form-check {
+    pointer-events: none;
+}
+
+.form-group-check {
+    margin: -4px -8px;
+
+    .form-check {
+        margin: 4px 8px;
+    }
 }
 
 .form-check-input {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: $form-check-mark-size;
@@ -48,13 +36,14 @@ $form-check-label-offset: 12px !default;
 }
 
 .form-check-mark {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: $form-check-mark-size;
     height: $form-check-mark-size;
-    background-color: $form-check-mark-background-color;
-    border: $form-check-mark-border-width solid $form-check-mark-border-color;
+    margin-right: 12px;
+    background-color: $white;
+    border: 1px solid map-get($grey, 60);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: $transition-duration;
     pointer-events: none;
 }
 
@@ -63,10 +52,8 @@ $form-check-label-offset: 12px !default;
     align-items: center;
     justify-content: center;
     line-height: 0;
-    color: $form-check-mark-color;
-    border-radius: $form-check-mark-border-radius;
-    transition-property: background-color, border-color;
-    transition-duration: $transition-duration;
+    color: $white;
+    border-radius: 2px;
 }
 
 .form-check-input[type="radio"] ~ .form-check-mark {
@@ -78,9 +65,9 @@ $form-check-label-offset: 12px !default;
         position: absolute;
         top: 50%;
         left: 50%;
-        width: $form-check-mark-radio-size;
-        height: $form-check-mark-radio-size;
-        background-color: $form-check-mark-background-color;
+        width: 10px;
+        height: 10px;
+        background-color: $white;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition-property: background-color;
@@ -88,35 +75,47 @@ $form-check-label-offset: 12px !default;
     }
 }
 
-.form-group.error .form-check-mark {
-    border-color: $danger;
+.form-check:hover .form-check-input:not(:focus) ~ .form-check-mark {
+    border-color: $form-check-color-hover;
 }
 
-.form-check-input:focus ~ .form-check-mark {
-    box-shadow: $form-check-mark-shadow-active;
+.form-check:hover .form-check-input:checked:not(:focus) ~ .form-check-mark {
+    background-color: $form-check-color-hover;
+}
+
+.form-group.error .form-check-mark {
+    border-color: $form-check-color-error;
 }
 
 .form-check-input:checked ~ .form-check-mark {
-    border-color: $form-check-mark-border-color-checked;
+    background-color: $form-check-color-checked;
+    border-color: $form-check-color-checked;
 }
 
-.form-check-input[type="checkbox"]:checked ~ .form-check-mark {
-    color: $form-check-mark-color-checked;
-    background-color: $form-check-mark-background-color-checked;
+.form-check-input:focus:not(:checked) ~ .form-check-mark {
+    border-color: map-get($grey, 80);
+    box-shadow: 0 0 0 4px rgba(map-get($grey, 60), 0.32);
 }
 
-.form-check-input[type="radio"]:checked ~ .form-check-mark::after {
-    background-color: $form-check-mark-background-color-checked;
+.form-check-input:focus:checked ~ .form-check-mark {
+    box-shadow: 0 0 0 4px rgba(map-get($secondary, 40), 0.56);
 }
 
+.form-group.disabled .form-check-mark {
+    border-color: $form-check-color-disabled;
+}
+
+.form-group.disabled .form-check-input:checked ~ .form-check-mark {
+    background-color: $form-check-color-disabled;
+}
+
+/// Form check label
 .form-check-label {
     display: block;
-    padding-left: calc(#{$form-check-mark-size} + #{$form-check-label-offset});
-    @if $form-check-label-font-family {
-        font-family: $form-check-label-font-family;
-    }
-    font-weight: $form-check-label-font-weight;
-    font-size: $form-check-label-font-size;
-    line-height: $form-check-label-line-height;
-    color: $form-check-label-color;
+    flex: 1 0 0;
+    color: map-get($grey, 100);
+}
+
+.form-group.disabled .form-check-label {
+    color: map-get($grey, 60)
 }

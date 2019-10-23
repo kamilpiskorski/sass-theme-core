@@ -1,19 +1,19 @@
 /// Form hint
 .form-hints {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .form-hint {
-    display: block;
-    margin-top: 8px;
-    font-size: $font-size-script;
-    color: $text-color;
+  display: block;
+  margin-top: 8px;
+  font-size: $font-size-script;
+  color: $text-color;
 
-    &.error {
-        margin-left: auto;
-        text-align: right;
-        color: map-get($danger, 60)
-    }
+  &.error {
+    margin-left: auto;
+    text-align: right;
+    color: map-get($danger, 60)
+  }
 }

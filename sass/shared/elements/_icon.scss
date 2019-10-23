@@ -4,31 +4,31 @@ $icon-font-size: 16px !default;
 $icon-line-height: 1 !default;
 
 $icon-font-size-others: (
-    24: 24px,
-    32: 32px,
-    48: 48px
+  24: 24px,
+  32: 32px,
+  48: 48px
 ) !default;
 
 @font-face {
-    font-family: $icon-font-family;
-    src: url("assets/fonts/icons.woff2") format("woff2"), url("assets/fonts/icons.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: $icon-font-family;
+  src: url("assets/fonts/icons.woff2") format("woff2"), url("assets/fonts/icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @mixin icon() {
-    display: inline-block;
-    text-transform: none;
-    font: normal normal normal $icon-font-size/$icon-line-height $icon-font-family;
-    speak: none;
+  display: inline-block;
+  text-transform: none;
+  font: normal normal normal $icon-font-size/$icon-line-height $icon-font-family;
+  speak: none;
 }
 
 .icon {
-    @include icon();
+  @include icon();
 }
 
 @each $number, $font-size in $icon-font-size-others {
-    .icon-#{$number} {
-        font-size: $font-size;
-    }
+  .icon-#{$number} {
+    font-size: $font-size;
+  }
 }

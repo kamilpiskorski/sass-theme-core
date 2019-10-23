@@ -1,9 +1,10 @@
-.form-group {
-    position: relative;
-}
+/// Form field
+.form-field {
+  position: relative;
 
-.form-group-check {
+  &.inline {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+  }
 }

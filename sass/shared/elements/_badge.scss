@@ -1,29 +1,29 @@
 /// Badge
 @mixin badge() {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 16px;
-    text-align: center;
-    color: map-get($grey, 100);
-    background-color: $white;
-    border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px;
+  text-align: center;
+  color: map-get($grey, 100);
+  background-color: $white;
+  border-radius: 16px;
 }
 
 .badge {
-    @include badge();
+  @include badge();
 }
 
 /// Badge color
 @mixin badge-color($name) {
-    $color: map-get($colors, $name);
+  $color: map-get($colors, $name);
 
-    color: $white;
-    background-color: map-get($color, 60);
+  color: $white;
+  background-color: map-get($color, 60);
 }
 
 @each $name, $color in $colors {
-    .badge-#{$name} {
-        @include badge-color($name);
-    }
+  .badge-#{$name} {
+    @include badge-color($name);
+  }
 }

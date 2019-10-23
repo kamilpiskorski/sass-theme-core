@@ -4,75 +4,75 @@ $white: white !default;
 $black: black !default;
 
 $grey: (
-    10: #F5F7FA,
-    20: #EBEFF5,
-    30: #DDE3ED,
-    40: #C8D1E0,
-    50: #AFBACC,
-    60: #8E99AB,
-    70: #707A8A,
-    80: #58606E,
-    90: #434A54,
-    100: #333840
+  10: #F5F7FA,
+  20: #EBEFF5,
+  30: #DDE3ED,
+  40: #C8D1E0,
+  50: #AFBACC,
+  60: #8E99AB,
+  70: #707A8A,
+  80: #58606E,
+  90: #434A54,
+  100: #333840
 ) !default;
 
 $primary: (
-    10: #FFEFE2,
-    20: #FFDFC3,
-    30: #FFCCA0,
-    40: #FFB677,
-    50: #FF9B44,
-    60: #FF7900,
-    70: #E66B00,
-    80: #CA5E00,
-    90: #A74E00,
-    100: #783800
+  10: #FFEFE2,
+  20: #FFDFC3,
+  30: #FFCCA0,
+  40: #FFB677,
+  50: #FF9B44,
+  60: #FF7900,
+  70: #E66B00,
+  80: #CA5E00,
+  90: #A74E00,
+  100: #783800
 ) !default;
 
 $secondary: (
-    10: #E4F1F8,
-    20: #C6E3F1,
-    30: #A4D2EA,
-    40: #7CBFE0,
-    50: #4AA7D5,
-    60: #0482C5,
-    70: #0378B1,
-    80: #03689B,
-    90: #025680,
-    100: #013D5B
+  10: #E4F1F8,
+  20: #C6E3F1,
+  30: #A4D2EA,
+  40: #7CBFE0,
+  50: #4AA7D5,
+  60: #0482C5,
+  70: #0378B1,
+  80: #03689B,
+  90: #025680,
+  100: #013D5B
 ) !default;
 
 $success: (
-    10: #E3F8EA,
-    20: #C5F1D4,
-    30: #A3E9BA,
-    40: #7BE09C,
-    50: #48D477,
-    60: #3EC543,
-    70: #37B23D,
-    80: #2F9C36,
-    90: #25802C,
-    100: #185D20
+  10: #E3F8EA,
+  20: #C5F1D4,
+  30: #A3E9BA,
+  40: #7BE09C,
+  50: #48D477,
+  60: #3EC543,
+  70: #37B23D,
+  80: #2F9C36,
+  90: #25802C,
+  100: #185D20
 ) !default;
 
 $danger: (
-    10: #FAEAEC,
-    20: #F4D2D8,
-    30: #EEB7C0,
-    40: #E695A3,
-    50: #DC687B,
-    60: #C50424,
-    70: #B20320,
-    80: #9C031C,
-    90: #810217,
-    100: #5D0111
+  10: #FAEAEC,
+  20: #F4D2D8,
+  30: #EEB7C0,
+  40: #E695A3,
+  50: #DC687B,
+  60: #C50424,
+  70: #B20320,
+  80: #9C031C,
+  90: #810217,
+  100: #5D0111
 ) !default;
 
 $colors: (
-    primary: $primary,
-    secondary: $secondary,
-    success: $success,
-    danger: $danger
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  danger: $danger
 ) !default;
 
 /// Borders
@@ -94,12 +94,12 @@ $font-size-small: 15px !default;
 $font-size-script: 14px !default;
 
 $font-size-heading: (
-    1: 40px,
-    2: 32px,
-    3: 26px,
-    4: 22px,
-    5: 18px,
-    6: 16px
+  1: 40px,
+  2: 32px,
+  3: 26px,
+  4: 22px,
+  5: 18px,
+  6: 16px
 );
 
 $text-color: map-get($grey, 80) !default;
@@ -108,23 +108,23 @@ $text-color: map-get($grey, 80) !default;
 $grid-gap: 16px !default;
 
 $grid: (
-    sm: 769px,
-    md: 960px,
-    lg: 1152px,
-    xl: 1344px
+  sm: 769px,
+  md: 960px,
+  lg: 1152px,
+  xl: 1344px
 ) !default;
 
 /// Spacing
 $spacing: (
-    1: 8px,
-    2: 12px,
-    3: 16px,
-    4: 24px,
-    5: 32px,
-    6: 40px,
-    7: 48px,
-    8: 56px,
-    9: 64px
+  1: 8px,
+  2: 12px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 40px,
+  7: 48px,
+  8: 56px,
+  9: 64px
 ) !default;
 
 /// Transition

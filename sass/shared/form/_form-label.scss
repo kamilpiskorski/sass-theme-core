@@ -9,71 +9,42 @@ $form-label-floating-padding-x: 6px !default;
 $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-label-floating-focus-scale;
 
 .form-label {
-    display: block;
-    margin-bottom: 4px;
-    font-size: $font-size-script;
-    color: $text-color;
-    transition-property: color;
-    transition-duration: $transition-duration;
+  display: block;
+  margin-bottom: 4px;
+  font-size: $font-size-script;
+  color: $text-color;
+  transition-property: color;
+  transition-duration: $transition-duration;
 
-    &.center {
-        text-align: center;
-    }
-
-    &.floating {
-        position: absolute;
-        z-index: 1;
-        top: 12px;
-        left: calc(12px - #{$form-label-floating-padding-x-scaled});
-        margin-bottom: 0;
-        padding-left: $form-label-floating-padding-x-scaled;
-        padding-right: $form-label-floating-padding-x-scaled;
-        font-size: $font-size;
-        background-color: $white;
-        pointer-events: none;
-        transform-origin: left center;
-        transition-property: color, transform;
-
-        &.center {
-            left: 50%;
-            transform: translateX(-50%);
-            transform-origin: center center;
-        }
-    }
+  &.floating {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: calc(12px - #{$form-label-floating-padding-x-scaled});
+    margin-bottom: 0;
+    padding-left: $form-label-floating-padding-x-scaled;
+    padding-right: $form-label-floating-padding-x-scaled;
+    font-size: $font-size;
+    background-color: $white;
+    pointer-events: none;
+    transform-origin: left center;
+    transition-property: color, transform;
+  }
 }
 
-.form-group.error .form-label {
-    color: $form-label-color-error;
+.form-field.error .form-label {
+  color: $form-label-color-error;
 }
 
-.form-group.small .form-label.floating {
-    top: 8px;
+.form-field.filled .form-label.floating,
+.form-field.focused .form-label.floating {
+  transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -24px, 0) scale($form-label-floating-focus-scale);
 }
 
-.form-group.filled .form-label.floating:not(.center),
-.form-group.focused .form-label.floating:not(.center) {
-    transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -24px, 0) scale($form-label-floating-focus-scale);
+.form-field.focused .form-label {
+  color: $form-label-color-focus;
 }
 
-.form-group.small.filled .form-label.floating:not(.center),
-.form-group.small.focused .form-label.floating:not(.center) {
-    transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -20px, 0) scale($form-label-floating-focus-scale);
-}
-
-.form-group.filled .form-label.floating.center,
-.form-group.focused .form-label.floating.center {
-    transform: translate3d(-50%, -24px, 0) scale($form-label-floating-focus-scale);
-}
-
-.form-group.small.filled .form-label.floating.center,
-.form-group.small.focused .form-label.floating.center {
-    transform: translate3d(-50%, -20px, 0) scale($form-label-floating-focus-scale);
-}
-
-.form-group.focused .form-label {
-    color: $form-label-color-focus;
-}
-
-.form-group.disabled .form-label {
-    color: $form-label-color-disabled;
+.form-field.disabled .form-label {
+  color: $form-label-color-disabled;
 }

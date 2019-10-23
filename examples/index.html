@@ -57,7 +57,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <div class="form-group error">
+                    <div class="form-field error">
                         <div class="form-check">
                             <input class="form-check-input" id="checkbox-city" type="checkbox">
                             <div class="form-check-mark"><i class="fas fa-check"></i></div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="form-group form-group-check">
+                    <div class="form-field inline">
                         <div class="form-check">
                             <input class="form-check-input" id="radio-city-poznan" name="city" type="radio">
                             <div class="form-check-mark"></div>
@@ -87,7 +87,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <div class="form-group">
+                    <div class="form-field">
                         <div class="form-label floating">Szukaj w Miasto</div>
                         <div class="form-control">
                             <select class="form-control-input" aria-label="Szukaj w Miasto">
@@ -103,7 +103,7 @@
 
                     <div class="my-1"></div>
 
-                    <div class="form-group">
+                    <div class="form-field">
                         <label class="form-label" for="search">Szukaj w Miasto</label>
                         <div class="form-control">
                             <input class="form-control-input" id="search" placeholder="Szukaj w Miasto" type="date">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="form-group error">
+                    <div class="form-field error">
                         <div class="form-label floating">Szukaj w Miasto</div>
                         <div class="form-control">
                             <input class="form-control-input" aria-label="Szukaj w Miasto" type="search">
@@ -123,7 +123,7 @@
 
                     <div class="my-1"></div>
 
-                    <div class="form-group disabled">
+                    <div class="form-field disabled">
                         <div class="form-label">Szukaj w Miasto</div>
                         <div class="form-control">
                             <input class="form-control-input" aria-label="Szukaj w Miasto" type="search" value="Cokolwiek" disabled>
@@ -176,20 +176,20 @@
 
             const checkFormControlFilled = () => {
                 formControlInputs.forEach(formControlInput => {
-                    const formGroup = formControlInput.closest('.form-group');
-                    formGroup.classList.toggle('filled', !!formControlInput.value);
+                    const formField = formControlInput.closest('.form-field');
+                    formField.classList.toggle('filled', !!formControlInput.value);
                 });
             };
 
             formControlInputs.forEach(formControlInput => {
-                const formGroup = formControlInput.closest('.form-group');
+                const formField = formControlInput.closest('.form-field');
 
                 formControlInput.addEventListener('focus', () => {
-                    formGroup.classList.add('focus');
+                    formField.classList.add('focused');
                 });
 
                 formControlInput.addEventListener('blur', () => {
-                    formGroup.classList.remove('focus');
+                    formField.classList.remove('focused');
                 });
 
                 formControlInput.addEventListener('input', () => {

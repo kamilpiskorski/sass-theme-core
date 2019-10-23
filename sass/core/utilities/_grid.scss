@@ -1,132 +1,132 @@
 /// FUNCTIONS
 @function container-width($size) {
-    @return map-get($grid, $size);
+  @return map-get($grid, $size);
 }
 
 @function container-padding($size) {
-    @return calc(50% - #{container-width($size) / 2 - $grid-gap});
+  @return calc(50% - #{container-width($size) / 2 - $grid-gap});
 }
 
 @function column-width($number, $size: null) {
-    @if $size {
-        @return ($number / 12) * container-width($size);
-    } @else {
-        @return percentage($number / 12);
-    }
+  @if $size {
+    @return ($number / 12) * container-width($size);
+  } @else {
+    @return percentage($number / 12);
+  }
 }
 
 /// MIXINS
 @mixin retina() {
-    @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
-        @content;
-    }
+  @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+    @content;
+  }
 }
 
 @mixin min-width($size) {
-    @media (min-width: container-width($size)) {
-        @content;
-    }
+  @media (min-width: container-width($size)) {
+    @content;
+  }
 }
 
 @mixin max-width($size) {
-    @media (max-width: container-width($size) - 1px) {
-        @content;
-    }
+  @media (max-width: container-width($size) - 1px) {
+    @content;
+  }
 }
 
 @mixin container() {
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
 
-    @each $size, $width in $grid {
-        @include min-width($size) {
-            padding-left: container-padding($size);
-            padding-right: container-padding($size);
-        }
+  @each $size, $width in $grid {
+    @include min-width($size) {
+      padding-left: container-padding($size);
+      padding-right: container-padding($size);
     }
+  }
 }
 
 @mixin columns() {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -$grid-gap;
-    margin-right: -$grid-gap;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$grid-gap;
+  margin-right: -$grid-gap;
 }
 
 @mixin column($number, $size: null) {
-    flex: 0 0 column-width($number, $size);
-    max-width: column-width($number, $size);
+  flex: 0 0 column-width($number, $size);
+  max-width: column-width($number, $size);
 }
 
 .container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
 
-    @each $size, $width in $grid {
-        @include min-width($size) {
-            width: $width;
-        }
+  @each $size, $width in $grid {
+    @include min-width($size) {
+      width: $width;
     }
+  }
 
-    &.fluid {
-        width: auto;
-    }
+  &.fluid {
+    width: auto;
+  }
 }
 
 .columns {
-    @include columns();
+  @include columns();
 }
 
 %column {
-    position: relative;
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
+  position: relative;
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
 }
 
 .column {
-    @extend %column;
+  @extend %column;
 
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
 }
 
 @each $size, $width in $grid {
-    .column-#{$size} {
-        @extend %column;
-    }
+  .column-#{$size} {
+    @extend %column;
+  }
 
-    @include min-width($size) {
-        .column-#{$size} {
-            flex-basis: 0;
-            flex-grow: 1;
-            max-width: 100%;
-        }
+  @include min-width($size) {
+    .column-#{$size} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
     }
+  }
 }
 
 @for $i from 1 through 12 {
-    .column-#{$i} {
-        @extend %column;
-        @include column($i);
-    }
+  .column-#{$i} {
+    @extend %column;
+    @include column($i);
+  }
 }
 
 @each $size, $width in $grid {
-    @for $i from 1 through 12 {
-        .column-#{$size}-#{$i} {
-            @extend %column;
-        }
+  @for $i from 1 through 12 {
+    .column-#{$size}-#{$i} {
+      @extend %column;
     }
+  }
 
-    @include min-width($size) {
-        @for $i from 1 through 12 {
-            .column-#{$size}-#{$i} {
-                @include column($i);
-            }
-        }
+  @include min-width($size) {
+    @for $i from 1 through 12 {
+      .column-#{$size}-#{$i} {
+        @include column($i);
+      }
     }
+  }
 }

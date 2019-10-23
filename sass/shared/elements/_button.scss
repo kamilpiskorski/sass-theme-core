@@ -1,224 +1,224 @@
 /// Button
 @mixin button() {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 22px;
-    text-align: center;
-    font-weight: $font-weight-medium;
-    color: map-get($grey, 100);
-    background-color: $white;
-    border: 2px solid $white;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition-property: color, background-color, border-color, box-shadow;
-    transition-duration: $transition-duration;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  text-align: center;
+  font-weight: $font-weight-medium;
+  color: map-get($grey, 100);
+  background-color: $white;
+  border: 2px solid $white;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: $transition-duration;
 
-    &:hover {
-        text-decoration: none;
-        background-color: map-get($grey, 10);
-        border-color: map-get($grey, 10);
-    }
+  &:hover {
+    text-decoration: none;
+    background-color: map-get($grey, 10);
+    border-color: map-get($grey, 10);
+  }
 
-    &:active {
-        background-color: map-get($grey, 30);
-        border-color: map-get($grey, 30);
-    }
+  &:active {
+    background-color: map-get($grey, 30);
+    border-color: map-get($grey, 30);
+  }
 
-    &:focus:not(:active) {
-        box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
-    }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
+  }
 
-    &.disabled,
-    &[disabled] {
-        color: map-get($grey, 60) !important;
-        background-color: map-get($grey, 30) !important;
-        border-color: map-get($grey, 30) !important;
-        box-shadow: none !important;
-        pointer-events: none;
-    }
+  &.disabled,
+  &[disabled] {
+    color: map-get($grey, 60) !important;
+    background-color: map-get($grey, 30) !important;
+    border-color: map-get($grey, 30) !important;
+    box-shadow: none !important;
+    pointer-events: none;
+  }
 
-    .icon:first-child {
-        margin-right: 12px;
-    }
+  .icon:first-child {
+    margin-right: 12px;
+  }
 
-    .icon:last-child {
-        margin-left: 12px;
-    }
+  .icon:last-child {
+    margin-left: 12px;
+  }
 }
 
 @mixin button-small() {
-    font-size: $font-size-small;
-    padding: 7px 14px;
+  font-size: $font-size-small;
+  padding: 7px 14px;
 
-    .icon:first-child {
-        margin-right: 8px;
-    }
+  .icon:first-child {
+    margin-right: 8px;
+  }
 
-    .icon:last-child {
-        margin-left: 8px;
-    }
+  .icon:last-child {
+    margin-left: 8px;
+  }
 }
 
 @mixin button-normal() {
-    font-size: $font-size;
-    padding: 10px 22px;
+  font-size: $font-size;
+  padding: 10px 22px;
 
-    .icon:first-child {
-        margin-right: 12px;
-    }
+  .icon:first-child {
+    margin-right: 12px;
+  }
 
-    .icon:last-child {
-        margin-left: 12px;
-    }
+  .icon:last-child {
+    margin-left: 12px;
+  }
 }
 
 @mixin button-large() {
-    padding: 14px 30px;
+  padding: 14px 30px;
 
-    .icon:first-child {
-        margin-right: 16px;
-    }
+  .icon:first-child {
+    margin-right: 16px;
+  }
 
-    .icon:last-child {
-        margin-left: 16px;
-    }
+  .icon:last-child {
+    margin-left: 16px;
+  }
 }
 
 @mixin button-full() {
-    flex: 0 0 100%;
-    width: 100%;
+  flex: 0 0 100%;
+  width: 100%;
 }
 
 .button {
-    @include button();
+  @include button();
 }
 
 .button-small {
-    @include button-small();
+  @include button-small();
 }
 
 .button-large {
-    @include button-large();
+  @include button-large();
 }
 
 .button-full {
-    @include button-full();
+  @include button-full();
 }
 
 /// Button solid
 @mixin button-solid($name) {
-    $color: map-get($colors, $name);
+  $color: map-get($colors, $name);
 
-    color: $white;
-    background-color: map-get($color, 60);
-    border-color: map-get($color, 60);
+  color: $white;
+  background-color: map-get($color, 60);
+  border-color: map-get($color, 60);
 
-    &:hover {
-        background-color: map-get($color, 50);
-        border-color: map-get($color, 50);
-    }
+  &:hover {
+    background-color: map-get($color, 50);
+    border-color: map-get($color, 50);
+  }
 
-    &:active {
-        background-color: map-get($color, 70);
-        border-color: map-get($color, 70);
-    }
+  &:active {
+    background-color: map-get($color, 70);
+    border-color: map-get($color, 70);
+  }
 
-    &:focus:not(:active) {
-        box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
-    }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
+  }
 }
 
 @each $name, $color in $colors {
-    .button-solid-#{$name} {
-        @include button-solid($name);
-    }
+  .button-solid-#{$name} {
+    @include button-solid($name);
+  }
 }
 
 /// Button outline
 @mixin button-outline($name) {
-    $color: map-get($colors, $name);
+  $color: map-get($colors, $name);
 
-    color: map-get($color, 60);
-    background-color: transparent;
-    border-color: map-get($color, 60);
+  color: map-get($color, 60);
+  background-color: transparent;
+  border-color: map-get($color, 60);
 
-    &:hover {
-        background-color: map-get($color, 10);
-        border-color: map-get($color, 50);
-    }
+  &:hover {
+    background-color: map-get($color, 10);
+    border-color: map-get($color, 50);
+  }
 
-    &:active {
-        color: map-get($color, 70);
-        background-color: map-get($color, 20);
-        border-color: map-get($color, 70);
-    }
+  &:active {
+    color: map-get($color, 70);
+    background-color: map-get($color, 20);
+    border-color: map-get($color, 70);
+  }
 
-    &:focus:not(:active) {
-        box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
-    }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 4px rgba(map-get($color, 60), 0.32);
+  }
 }
 
 @mixin button-outline-dark() {
-    color: $text-color;
-    background-color: transparent;
-    border-color: map-get($grey, 80);
+  color: $text-color;
+  background-color: transparent;
+  border-color: map-get($grey, 80);
 
-    &:hover {
-        background-color: map-get($grey, 30);
-        border-color: map-get($grey, 70);
-    }
+  &:hover {
+    background-color: map-get($grey, 30);
+    border-color: map-get($grey, 70);
+  }
 
-    &:active {
-        color: map-get($grey, 90);
-        background-color: map-get($grey, 40);
-        border-color: map-get($grey, 90);
-    }
+  &:active {
+    color: map-get($grey, 90);
+    background-color: map-get($grey, 40);
+    border-color: map-get($grey, 90);
+  }
 
-    &:focus:not(:active) {
-        box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
-    }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 4px rgba(map-get($grey, 80), 0.32);
+  }
 }
 
 @each $name, $color in $colors {
-    .button-outline-#{$name} {
-        @include button-outline($name);
-    }
+  .button-outline-#{$name} {
+    @include button-outline($name);
+  }
 }
 
 .button-outline-dark {
-    @include button-outline-dark();
+  @include button-outline-dark();
 }
 
 /// Button icon
 @mixin button-icon() {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    text-align: center;
-    line-height: 0;
-    color: $text-color;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition-property: background-color, border-color, box-shadow;
-    transition-duration: $transition-duration;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  line-height: 0;
+  color: $text-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: $transition-duration;
 
-    &:hover {
-        background-color: map-get($grey, 10);
-        border-color: map-get($grey, 10);
-    }
+  &:hover {
+    background-color: map-get($grey, 10);
+    border-color: map-get($grey, 10);
+  }
 
-    &:active {
-        background-color: map-get($grey, 30);
-        border-color: map-get($grey, 30);
-    }
+  &:active {
+    background-color: map-get($grey, 30);
+    border-color: map-get($grey, 30);
+  }
 
-    &:focus:not(:active) {
-        box-shadow: 0 0 0 3px rgba(map-get($grey, 80), 0.32);
-    }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 3px rgba(map-get($grey, 80), 0.32);
+  }
 }
 
 .button-icon {
-    @include button-icon();
+  @include button-icon();
 }

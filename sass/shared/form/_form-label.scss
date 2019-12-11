@@ -1,9 +1,11 @@
 /// Form label
+$form-label-font-size: $font-size-script !default;
 $form-label-color-focus: map-get($secondary, 80) !default;
 $form-label-color-error: map-get($danger, 60) !default;
 $form-label-color-disabled: map-get($grey, 60) !default;
 
 /// Form label floating
+$form-label-floating-font-size: $font-size !default;
 $form-label-floating-focus-scale: 0.75 !default;
 $form-label-floating-padding-x: 6px !default;
 $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-label-floating-focus-scale;
@@ -11,7 +13,7 @@ $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-labe
 .form-label {
   display: block;
   margin-bottom: 4px;
-  font-size: $font-size-script;
+  font-size: $form-label-font-size;
   color: $text-color;
   transition-property: color;
   transition-duration: $transition-duration;
@@ -24,7 +26,7 @@ $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-labe
     margin-bottom: 0;
     padding-left: $form-label-floating-padding-x-scaled;
     padding-right: $form-label-floating-padding-x-scaled;
-    font-size: $font-size;
+    font-size: $form-label-floating-font-size;
     background-color: $white;
     pointer-events: none;
     transform-origin: left center;

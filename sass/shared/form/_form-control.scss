@@ -1,4 +1,5 @@
 /// Form control
+$form-control-font-size: $font-size !default;
 $form-control-border-color-hover: map-get($secondary, 50) !default;
 $form-control-border-color-focus: map-get($secondary, 80) !default;
 $form-control-border-color-error: map-get($danger, 60) !default;
@@ -48,6 +49,7 @@ $form-control-border-color-disabled: map-get($grey, 40) !default;
   height: 48px;
   padding: 12px;
   text-align: left;
+  font-size: $form-control-font-size;
   color: map-get($grey, 100);
   background-color: $white;
   border-radius: $border-radius;

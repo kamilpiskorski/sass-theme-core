@@ -1,19 +1,22 @@
-/// Form hint
+/// Form hint | Form error
 .form-hints {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.form-hint {
+.form-hint,
+.form-error {
   display: block;
   margin-top: 8px;
   font-size: $font-size-script;
-  color: $text-color;
+}
 
-  &.error {
-    margin-left: auto;
-    text-align: right;
-    color: map-get($danger, 60)
-  }
+.form-hint {
+  color: $text-color;
+}
+
+.form-error {
+  text-align: right;
+  color: map-get($danger, 60);
 }

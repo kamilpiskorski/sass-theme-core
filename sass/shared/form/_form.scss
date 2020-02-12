@@ -1,0 +1,13 @@
+/// Form
+.form.disabled {
+  pointer-events: none;
+}
+
+.form .form-field,
+.form .form-file {
+  margin-top: 16px;
+
+  @include min-width(md) {
+    margin-top: 24px;
+  }
+}

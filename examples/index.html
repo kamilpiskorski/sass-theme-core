@@ -1,207 +1,422 @@
 <!doctype html>
 <html lang="pl">
-    <head>
-        <meta charset="utf-8"/>
+<head>
+  <title>MVPdoers - sass theme core</title>
 
-        <title>MVPdoers - sass theme core</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="SASS theme core. Set of utilities, vars, grid, form elements and some pure components.">
 
-        <meta name="description" content="SASS theme core. Set of utilities, vars, grid, form elements and some pure components.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no"/>
 
-        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0"/>
-        <meta name="format-detection" content="telephone=no"/>
+  <meta name="apple-mobile-web-app-title" content="MVPdoers - sass theme core">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="theme-color" content="#FFFFFF">
 
-        <meta name="apple-mobile-web-app-capable" content="yes"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-        <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="my-3"></div>
 
-        <script src="https://kit.fontawesome.com/73b08baea9.js"></script>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="badge">Badge</div>
+        <div class="badge badge-primary">Badge primary</div>
+        <div class="badge badge-secondary">Badge secondary</div>
+        <div class="badge badge-success">Badge success</div>
+        <div class="badge badge-danger">Badge danger</div>
+      </div>
+    </div>
+  </div>
 
-        <link rel="stylesheet" href="../css/app.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="badge badge-small badge-primary">Wybrany filtr</div>
-                    <div class="badge">Wybrany filtr</div>
-                    <div class="badge badge-large badge-success">Wybrany filtr</div>
-                </div>
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <button class="button">Button</button>
+        <button class="button button-solid-primary">Button primary</button>
+        <button class="button button-solid-secondary">Button secondary</button>
+        <button class="button button-solid-success">Button success</button>
+        <button class="button button-solid-danger">Button danger</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <button class="button button-outline-primary">Button primary</button>
+        <button class="button button-outline-secondary">Button secondary</button>
+        <button class="button button-outline-success">Button success</button>
+        <button class="button button-outline-danger">Button danger</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <a class="link" href="#">Link</a>
+        <a class="link link-primary" href="#">Link primary</a>
+        <a class="link link-secondary" href="#">Link secondary</a>
+        <a class="link link-success" href="#">Link success</a>
+        <a class="link link-danger" href="#">Link danger</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="form-field">
+          <p class="form-label">Płeć</p>
+          <div class="form-field-check inline">
+            <div class="form-check">
+              <input class="form-check-input" id="radio-sex-female" name="sex" type="radio">
+              <div class="form-check-mark"></div>
+              <label class="form-check-label" for="radio-sex-female">Kobieta</label>
             </div>
+            <div class="form-check">
+              <input class="form-check-input" id="radio-sex-male" name="sex" type="radio">
+              <div class="form-check-mark"></div>
+              <label class="form-check-label" for="radio-sex-male">Mężczyzna</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="form-field error">
+          <div class="form-check">
+            <input class="form-check-input" id="checkbox-city" type="checkbox">
+            <div class="form-check-mark"><i class="fas fa-check"></i></div>
+            <label class="form-check-label" for="checkbox-city">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="form-field">
+          <div class="form-label floating">Szukaj w Miasto</div>
+          <div class="form-control">
+            <select class="form-control-input" aria-label="Szukaj w Miasto">
+              <option value="" selected disabled>Szukaj w Miasto</option>
+              <option>Warszawa</option>
+              <option>Poznań</option>
+              <option>Wrocław</option>
+              <option>Kraków</option>
+            </select>
+            <div class="form-control-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
         </div>
 
-        <div class="my-3"></div>
+        <div class="my-1"></div>
 
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <button class="button button-solid-light">Button</button>
-                    <button class="button button-solid-dark">Button</button>
-                    <button class="button button-solid-primary">Button</button>
-                    <button class="button button-solid-secondary">Button</button>
-                    <button class="button button-solid-success">Button</button>
-                    <button class="button button-solid-danger">Button</button>
-                </div>
-                <div class="column">
-                    <button class="button button-outline-light">Button</button>
-                    <button class="button button-outline-dark">Button</button>
-                    <button class="button button-outline-primary">Button</button>
-                    <button class="button button-outline-secondary">Button</button>
-                    <button class="button button-outline-success">Button</button>
-                    <button class="button button-outline-danger">Button</button>
-                </div>
-            </div>
+        <div class="form-field">
+          <label class="form-label" for="search">Szukaj w Miasto</label>
+          <div class="form-control">
+            <input class="form-control-input" id="search" placeholder="Szukaj w Miasto" type="date">
+            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="form-field error">
+          <div class="form-label floating">Szukaj w Miasto</div>
+          <div class="form-control">
+            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search">
+            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+          </div>
+          <div class="form-errors">
+            <div class="form-error">Pole miasto jest wymagane</div>
+          </div>
         </div>
 
-        <div class="my-3"></div>
+        <div class="my-1"></div>
 
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="form-field error">
-                        <div class="form-check">
-                            <input class="form-check-input" id="checkbox-city" type="checkbox">
-                            <div class="form-check-mark"><i class="fas fa-check"></i></div>
-                            <label class="form-check-label" for="checkbox-city">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ex fugiat id iure laboriosam maxime molestiae porro quidem quod vero. Optio perspiciatis reiciendis unde voluptate. Amet exercitationem laudantium similique veniam?</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="form-field inline">
-                        <div class="form-check">
-                            <input class="form-check-input" id="radio-city-poznan" name="city" type="radio">
-                            <div class="form-check-mark"></div>
-                            <label class="form-check-label" for="radio-city-poznan">Poznań</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" id="radio-city-gdansk" name="city" type="radio">
-                            <div class="form-check-mark"></div>
-                            <label class="form-check-label" for="radio-city-gdansk">Gdańsk</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="form-field disabled">
+          <div class="form-label">Szukaj w Miasto</div>
+          <div class="form-control">
+            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search" value="Cokolwiek" disabled>
+            <div class="form-control-icon"><i class="fas fa-search"></i></div>
+          </div>
+          <div class="form-hints">
+            <div class="form-hint">Pozostało 120 znaków</div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="my-3"></div>
+  <div class="my-3"></div>
 
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="form-field">
-                        <div class="form-label floating">Szukaj w Miasto</div>
-                        <div class="form-control">
-                            <select class="form-control-input" aria-label="Szukaj w Miasto">
-                                <option value="" selected disabled>Szukaj w Miasto</option>
-                                <option>Warszawa</option>
-                                <option>Poznań</option>
-                                <option>Wrocław</option>
-                                <option>Kraków</option>
-                            </select>
-                            <div class="form-control-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                    </div>
-
-                    <div class="my-1"></div>
-
-                    <div class="form-field">
-                        <label class="form-label" for="search">Szukaj w Miasto</label>
-                        <div class="form-control">
-                            <input class="form-control-input" id="search" placeholder="Szukaj w Miasto" type="date">
-                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="form-field error">
-                        <div class="form-label floating">Szukaj w Miasto</div>
-                        <div class="form-control">
-                            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search">
-                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
-                        </div>
-                        <div class="form-errors">
-                            <div class="form-error">Pole miasto jest wymagane</div>
-                        </div>
-                    </div>
-
-                    <div class="my-1"></div>
-
-                    <div class="form-field disabled">
-                        <div class="form-label">Szukaj w Miasto</div>
-                        <div class="form-control">
-                            <input class="form-control-input" aria-label="Szukaj w Miasto" type="search" value="Cokolwiek" disabled>
-                            <div class="form-control-icon"><i class="fas fa-search"></i></div>
-                        </div>
-                        <div class="form-hints">
-                            <div class="form-hint">Pozostało 120 znaków</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="form-file">
+          <div class="form-file-browse button button-outline-primary">
+            <span>Wybierz plik</span>
+            <input class="form-file-input" id="file" type="file">
+          </div>
+          <label class="form-file-label" for="file">Możesz dodać plik .doc, .pdf, .rtf, .jpg, .png, .bmp o maksymalnej wadze 3MB.</label>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="my-3"></div>
+  <div class="my-3"></div>
 
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="form-file">
-                        <div class="form-file-browse button button-outline-dark">
-                            <span>Wybierz plik</span>
-                            <input class="form-file-input" id="file" type="file">
-                        </div>
-                        <label class="form-file-label" for="file">Możesz dodać plik .doc, .pdf, .rtf, .jpg, .png, .bmp o maksymalnej wadze 3MB.</label>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="text-heading-1">Heading 1</h1>
+        <h2 class="text-heading-2">Heading 2</h2>
+        <h3 class="text-heading-3">Heading 3</h3>
+        <h4 class="text-heading-4">Heading 4</h4>
+        <h5 class="text-heading-5">Heading 5</h5>
+        <h6 class="text-heading-6">Heading 6</h6>
+      </div>
+      <div class="column">
+        <p class="text-primary">Text primary</p>
+        <p class="text-secondary">Text secondary</p>
+        <p class="text-success">Text success</p>
+        <p class="text-danger">Text danger</p>
+        <p class="text-dark">Text dark</p>
+        <p class="text-light">Text light</p>
+        <p>Text normal</p>
+        <p class="text-small">Text small</p>
+        <p class="text-script">Text script</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column-6 mx-auto">
+        <div class="alert alert-primary">
+          <div class="alert-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <p class="alert-title">Alert title</p>
+          <p class="alert-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <div class="alert-actions">
+            <button class="button button-outline-danger">Cancel</button>
+            <button class="button button-solid-success">Accept</button>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="my-3"></div>
+  <div class="my-3"></div>
 
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <h1 class="text-heading-1">Heading 1</h1>
-                    <h2 class="text-heading-2">Heading 2</h2>
-                    <h3 class="text-heading-3">Heading 3</h3>
-                    <h4 class="text-heading-4">Heading 4</h4>
-                    <h5 class="text-heading-5">Heading 5</h5>
-                    <h6 class="text-heading-6">Heading 6</h6>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <button class="button button-solid-primary js-modal-toggle" type="button">Show modal</button>
+      </div>
+      <div class="column">
+        <div class="modal" style="display: none;">
+          <div class="modal-container">
+            <div class="modal-overlay js-modal-toggle"></div>
+            <div class="modal-content">
+              <div class="alert alert-primary">
+                <div class="alert-icon">
+                  <i class="fas fa-shopping-cart"></i>
                 </div>
-                <div class="column">
-                    <p>Text normal</p>
-                    <p class="text-small">Text small</p>
-                    <p class="text-script">Text script</p>
+                <p class="alert-title">Alert title</p>
+                <p class="alert-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="alert-actions">
+                  <button class="button button-outline-danger">Cancel</button>
+                  <button class="button button-solid-success">Accept</button>
                 </div>
+              </div>
+
+              <button class="modal-close js-modal-toggle" aria-label="close" type="button">
+                <i class="fas fa-times"></i>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <script>
-            const formControlInputs = document.querySelectorAll('.form-control-input');
+  <div class="my-3"></div>
 
-            const checkFormControlFilled = () => {
-                formControlInputs.forEach(formControlInput => {
-                    const formField = formControlInput.closest('.form-field');
-                    formField.classList.toggle('filled', !!formControlInput.value);
-                });
-            };
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification notification-danger">
+          <div class="notification-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="notification-content">
+            <p class="notification-title">Notification title</p>
+          </div>
+          <button class="notification-close" aria-label="close" type="button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification notification-secondary">
+          <div class="notification-icon">
+            <i class="fas fa-edit"></i>
+          </div>
+          <div class="notification-content">
+            <p class="notification-title">Notification title</p>
+            <p class="notification-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            formControlInputs.forEach(formControlInput => {
-                const formField = formControlInput.closest('.form-field');
+  <div class="my-3"></div>
 
-                formControlInput.addEventListener('focus', () => {
-                    formField.classList.add('focused');
-                });
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="rte">
+          <h1>Heading 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, <a href="#">quisquam</a> tempore ullam ut veritatis, vitae.</p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet</li>
+          </ul>
+          <h2>Heading 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, quisquam tempore ullam ut veritatis, vitae.</p>
+          <ol>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet,</li>
+            <li>Lorem ipsum dolor sit amet</li>
+          </ol>
+          <h3>Heading 3</h3>
+          <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, quisquam tempore ullam ut veritatis, vitae.</p>
+          <h4>Heading 4</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, quisquam tempore ullam ut veritatis, vitae.</p>
+          <h5>Heading 5</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, quisquam tempore ullam ut veritatis, vitae.</p>
+          <h6>Heading 6</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores cupiditate dignissimos doloribus, excepturi illum impedit iure magni molestias neque nihil quasi, quisquam tempore ullam ut veritatis, vitae.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                formControlInput.addEventListener('blur', () => {
-                    formField.classList.remove('focused');
-                });
+  <div class="my-3"></div>
 
-                formControlInput.addEventListener('input', () => {
-                    checkFormControlFilled();
-                });
-            });
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="pagination">
+          <button class="pagination-previous" aria-label="previous" type="button">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div class="pagination-count">
+            <p class="pagination-count-label"><span>Strona 1 z 10</span><i class="fas fa-chevron-down"></i></p>
+            <select class="pagination-count-select" name="page" aria-label="page">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="pagination-pages">
+            <a class="pagination-page active" href="#">1</a>
+            <a class="pagination-page" href="#">2</a>
+            <a class="pagination-page" href="#">3</a>
+            <a class="pagination-page" href="#">4</a>
+            <a class="pagination-page" href="#">5</a>
+            <a class="pagination-page" href="#">6</a>
+            <a class="pagination-page" href="#">7</a>
+            <a class="pagination-page" href="#">8</a>
+            <a class="pagination-page" href="#">9</a>
+            <a class="pagination-page" href="#">10</a>
+          </div>
+          <button class="pagination-next" aria-label="next" type="button">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            checkFormControlFilled();
-        </script>
-    </body>
+  <div class="my-3"></div>
+
+  <script>
+    const formControlInputs = document.querySelectorAll('.form-control-input');
+
+    formControlInputs.forEach(formControlInput => {
+      const formField = formControlInput.closest('.form-field');
+
+      formControlInput.addEventListener('focus', () => {
+        formField.classList.add('focused');
+      });
+
+      formControlInput.addEventListener('blur', () => {
+        formField.classList.remove('focused');
+      });
+
+      formControlInput.addEventListener('input', () => {
+        formField.classList.toggle('filled', !!formControlInput.value);
+      });
+    });
+
+    const checkFormControlFilled = () => {
+      formControlInputs.forEach(formControlInput => {
+        const formField = formControlInput.closest('.form-field');
+        formField.classList.toggle('filled', !!formControlInput.value);
+      });
+    };
+
+    checkFormControlFilled();
+
+    const modalElement = document.querySelector('.modal');
+    const modalToggleButtons = document.querySelectorAll('.js-modal-toggle');
+
+    modalToggleButtons.forEach(modalToggleButton => {
+      modalToggleButton.addEventListener('click', () => {
+        modalElement.style.display = modalElement.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+  <script src="https://kit.fontawesome.com/73b08baea9.js"></script>
+</body>
 </html>

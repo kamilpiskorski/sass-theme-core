@@ -4,11 +4,13 @@
 }
 
 .form-field-check {
+  display: flex;
+  flex-direction: column;
   margin: -4px -8px;
 
   &.inline {
-    display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

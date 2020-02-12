@@ -1,0 +1,45 @@
+/// Alert
+.alert {
+  text-align: center;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  color: $text-dark-color;
+  background-color: $grey-20;
+  border-radius: 50%;
+}
+
+.alert-title {
+  font-weight: $font-weight-medium;
+  color: $text-dark-color;
+}
+
+.alert-description {
+  margin-top: 8px;
+}
+
+.alert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  margin: 20px -8px -4px;
+
+  .button {
+    margin: 4px 8px;
+  }
+}
+
+/// Alert color
+@each $name, $color in $colors {
+  .alert-#{"" + $name} .alert-icon {
+    background-color: map-get($color, 20);
+  }
+}

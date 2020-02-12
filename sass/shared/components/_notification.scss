@@ -1,0 +1,52 @@
+/// Notification
+.notification {
+  display: flex;
+  padding: 8px 16px;
+  color: $text-dark-color;
+  background-color: $grey-20;
+  border-radius: $border-radius;
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  background-color: $white;
+  border-radius: 50%;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0;
+}
+
+.notification-title {
+  font-weight: $font-weight-medium;
+}
+
+.notification-description {
+  margin-top: 4px;
+}
+
+.notification-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: -16px;
+}
+
+/// Notification color
+@each $name, $color in $colors {
+  .notification-#{"" + $name} {
+    background-color: map-get($color, 20);
+  }
+}

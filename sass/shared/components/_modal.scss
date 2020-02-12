@@ -38,7 +38,7 @@
   padding: 48px;
   background-color: $white;
   border-radius: $border-radius;
-  box-shadow: 0 2px 8px 0 rgba($grey-100, 0.16);
+  box-shadow: $box-shadow;
 }
 
 .modal-close {

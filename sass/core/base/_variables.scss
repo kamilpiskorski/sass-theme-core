@@ -121,6 +121,9 @@ $colors: (
   )
 ) !default;
 
+/// Shadows
+$box-shadow: 0 2px 8px 0 rgba($grey-100, 0.16) !default;
+
 /// Borders
 $border-color: $grey-40 !default;
 $border-radius: 4px !default;

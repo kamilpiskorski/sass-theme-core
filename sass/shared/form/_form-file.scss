@@ -1,6 +1,6 @@
 /// Form file
-@include min-width(sm) {
-  .form-file {
+.form-file {
+  @include min-width(sm) {
     display: flex;
     align-items: baseline;
   }

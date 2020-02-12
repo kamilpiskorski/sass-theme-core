@@ -2,7 +2,7 @@
 %text-heading {
   font-family: $font-family-secondary;
   font-weight: $font-weight-semibold;
-  color: map-get($grey, 100);
+  color: $text-dark-color;
 }
 
 @each $number, $font-size in $font-size-heading {
@@ -13,6 +13,7 @@
   }
 }
 
+// Text
 .text-small {
   font-size: $font-size-small;
 }
@@ -43,4 +44,19 @@
 
 .text-uppercase {
   text-transform: uppercase;
+}
+
+/// Text color
+.text-white {
+  color: $white;
+}
+
+.text-dark {
+  color: $text-dark-color;
+}
+
+@each $name, $color in $colors {
+  .text-#{"" + $name} {
+    color: map-get($color, 60);
+  }
 }

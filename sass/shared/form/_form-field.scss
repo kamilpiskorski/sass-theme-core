@@ -1,6 +1,10 @@
 /// Form field
 .form-field {
   position: relative;
+}
+
+.form-field-check {
+  margin: -4px -8px;
 
   &.inline {
     display: flex;

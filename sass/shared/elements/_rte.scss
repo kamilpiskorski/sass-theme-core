@@ -1,0 +1,50 @@
+.rte {
+  color: $text-dark-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    @extend %text-heading;
+
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  @each $number, $font-size in $font-size-heading {
+    #{"h" + $number} {
+      font-size: $font-size;
+    }
+  }
+
+  p {
+    margin-top: 16px;
+  }
+
+  a {
+    @include link();
+    @include link-color(primary);
+  }
+
+  strong, b {
+    font-weight: $font-weight-bold;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  ul, ol {
+    padding-left: 32px;
+    margin-top: 16px;
+
+    li:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+}

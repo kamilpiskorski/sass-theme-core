@@ -6,20 +6,20 @@
   &:hover,
   &:focus {
     color: $white;
-    background-color: map-get($grey, 60);
+    background-color: $grey-60;
   }
 
   &:active {
-    background-color: map-get($grey, 80);
+    background-color: $grey-80;
   }
 
   &:focus:not(:active) {
-    box-shadow: 0 0 0 4px rgba(map-get($grey, 40), 0.32);
+    box-shadow: 0 0 0 4px rgba($grey-40, 0.32);
   }
 
   &.disabled,
   &[disabled] {
-    color: map-get($grey, 60) !important;
+    color: $text-light-color !important;
     background: none !important;
     box-shadow: none !important;
     pointer-events: none;
@@ -28,6 +28,28 @@
 
 .link {
   @include link();
+}
+
+/// Link button
+@mixin link-button() {
+  @include link();
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .icon:first-child {
+    margin-right: 8px;
+  }
+
+  .icon:last-child {
+    margin-left: 8px;
+  }
+}
+
+.link-button {
+  @include link-button();
 }
 
 /// Link color
@@ -52,7 +74,7 @@
 }
 
 @each $name, $color in $colors {
-  .link-#{$name} {
+  .link-#{"" + $name} {
     @include link-color($name);
   }
 }

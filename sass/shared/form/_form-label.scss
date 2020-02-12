@@ -1,8 +1,7 @@
 /// Form label
 $form-label-font-size: $font-size-script !default;
-$form-label-color-focus: map-get($secondary, 80) !default;
-$form-label-color-error: map-get($danger, 60) !default;
-$form-label-color-disabled: map-get($grey, 60) !default;
+$form-label-color-focus: $secondary-80 !default;
+$form-label-color-error: $danger-60 !default;
 
 /// Form label floating
 $form-label-floating-font-size: $font-size !default;
@@ -32,21 +31,21 @@ $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-labe
     transform-origin: left center;
     transition-property: color, transform;
   }
-}
 
-.form-field.error .form-label {
-  color: $form-label-color-error;
-}
+  .form-field.filled &.floating,
+  .form-field.focused &.floating {
+    transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -24px, 0) scale($form-label-floating-focus-scale);
+  }
 
-.form-field.filled .form-label.floating,
-.form-field.focused .form-label.floating {
-  transform: translate3d($form-label-floating-padding-x-scaled - $form-label-floating-padding-x, -24px, 0) scale($form-label-floating-focus-scale);
-}
+  .form-field.focused & {
+    color: $form-label-color-focus;
+  }
 
-.form-field.focused .form-label {
-  color: $form-label-color-focus;
-}
+  .form-field.error & {
+    color: $form-label-color-error;
+  }
 
-.form-field.disabled .form-label {
-  color: $form-label-color-disabled;
+  .form-field.disabled & {
+    color: $text-light-color;
+  }
 }

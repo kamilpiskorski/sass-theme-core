@@ -28,7 +28,7 @@ $icon-font-size-others: (
 }
 
 @each $number, $font-size in $icon-font-size-others {
-  .icon-#{$number} {
+  .icon-#{"" + $number} {
     font-size: $font-size;
   }
 }

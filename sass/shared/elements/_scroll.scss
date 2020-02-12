@@ -1,11 +1,18 @@
-.scroll-vertical {
+/// Scroll
+@mixin scroll-vertical() {
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+}
+
+@mixin scroll-horizontal() {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scroll-vertical {
+  @include scroll-vertical();
 }
 
 .scroll-horizontal {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  @include scroll-horizontal();
 }

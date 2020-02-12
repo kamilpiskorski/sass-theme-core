@@ -1,0 +1,48 @@
+/// Form options
+.form-options {
+  @include scroll-vertical();
+
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 192px;
+  margin-top: 8px;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 8px 0 rgba($grey-100, 0.16);
+}
+
+.form-option {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  white-space: nowrap;
+  text-align: left;
+  border-bottom: 1px solid $border-color;
+  background-color: $white;
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: $transition-duration;
+
+  &:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  &:hover,
+  &.focused {
+    background-color: $grey-20;
+  }
+
+  &.selected {
+    font-weight: $font-weight-medium;
+    color: $text-dark-color;
+    background-color: $secondary-20;
+  }
+}

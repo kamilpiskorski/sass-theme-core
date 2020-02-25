@@ -109,6 +109,7 @@ $form-check-color-disabled: $grey-40 !default;
 .form-check-label {
   display: block;
   flex: 1 0 0;
+  text-align: left;
   color: $text-dark-color;
 
   .form-field.disabled & {

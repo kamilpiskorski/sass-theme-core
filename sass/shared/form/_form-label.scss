@@ -13,6 +13,7 @@ $form-label-floating-padding-x-scaled: $form-label-floating-padding-x/$form-labe
   display: block;
   margin-bottom: 4px;
   font-size: $form-label-font-size;
+  text-align: left;
   color: $text-color;
   transition-property: color;
   transition-duration: $transition-duration;

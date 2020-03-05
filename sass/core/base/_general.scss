@@ -9,6 +9,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 body,

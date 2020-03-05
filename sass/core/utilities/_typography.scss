@@ -64,3 +64,18 @@
     color: map-get($color, 60);
   }
 }
+
+/// Text overflow
+@mixin text-overflow($line: null) {
+  overflow: hidden;
+
+  @if $line {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  } @else {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

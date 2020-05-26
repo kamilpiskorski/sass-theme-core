@@ -29,12 +29,8 @@ footer, header, hgroup, menu, nav, section {
   width: device-width;
 }
 
-html {
-  box-sizing: border-box;
-}
-
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 ol, ul {
